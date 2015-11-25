@@ -82,3 +82,6 @@ let g:syntastic_check_on_wq = 0
 
 "this is to enable powerline fonts
 let g:airline_powerline_fonts = 1
+
+"show .git* files in nerdtree view
+let NERDTreeIgnore = ["/.git*"]
