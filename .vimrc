@@ -60,6 +60,9 @@ nmap <leader>W :res 0<CR>
 " plugin settings
 let g:NERDTreeWinSize = 50
 
+"vim searches for tags up to ~/Code
+set tags=./tags;~/Code
+
 "open .md files as Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
