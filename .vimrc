@@ -16,6 +16,8 @@ Plugin 'Tasklist.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'django.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " colors
 "Plugin 'altercation/vim-colors-solarized'
@@ -87,4 +89,7 @@ let g:syntastic_check_on_wq = 0
 let g:airline_powerline_fonts = 1
 
 "show .git* files in nerdtree view
-let NERDTreeIgnore = ["/.git*"]
+let NERDTreeIgnore = ["/.git*","\.pyc$"]
+
+"create django highlighting
+au BufNewfile,BufRead *.djt.html set filetype=htmldjango
