@@ -84,4 +84,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # use vim keybindings
+alias logtoday="vim ~/doc/logs/$(date +%F).log.yaml"
 set -o vi
