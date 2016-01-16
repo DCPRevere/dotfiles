@@ -93,3 +93,5 @@ let NERDTreeIgnore = ["/.git*","\.pyc$"]
 
 "create django highlighting
 au BufNewfile,BufRead *.djt.html set filetype=htmldjango
+
+au BufNewFile *.log.yaml r ~/doc/logs/template.log.yaml
