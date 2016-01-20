@@ -1,3 +1,5 @@
+(require 'cl)
+
 (setq package-list
     '(centered-cursor-mode
 		evil
