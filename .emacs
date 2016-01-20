@@ -37,7 +37,8 @@
 
 (load-theme 'zenburn t)
 
-(centered-cursor-mode t)
+(and
+  (global-centered-cursor-mode +1))
 
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
