@@ -10,7 +10,7 @@
 
 (require 'org)
 
-(require 'relative-line-numbers)
+;; (require 'relative-line-numbers)
 
 (require 'centered-cursor-mode)
 
