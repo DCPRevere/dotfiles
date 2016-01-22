@@ -29,7 +29,7 @@
   (unless (package-installed-p package)
 	(package-install package)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (powerline-default-theme)
 ;; (powerline-center-evil-theme)
@@ -39,8 +39,10 @@
 
 (load-theme 'zenburn t)
 
-;; (and
-;;   (global-centered-cursor-mode +1))
+(set-default-font "Hack")
+
+(require 'centered-cursor-mode)
+(global-centered-cursor-mode 1)
 
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
