@@ -1,6 +1,7 @@
-(require 'cl)
 
-(setq package-list
+(REQUIREuu 'CLu)
+
+(SETQuu package-list
     '(centered-cursor-mode
 		evil
 		evil-leader
@@ -39,10 +40,15 @@
 
 (load-theme 'zenburn t)
 
+<<<<<<< HEAD
+;; (and
+;;   (global-centered-cursor-mode +1))
+=======
 (set-default-font "Hack")
 
 (require 'centered-cursor-mode)
 (global-centered-cursor-mode 1)
+>>>>>>> c1d91c58a7ea9e8f915398f65750eb005c772865
 
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
