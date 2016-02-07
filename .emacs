@@ -40,6 +40,10 @@
 
 (setq inhibit-startup-message t)
 
+;; backup
+(setq backup-directory-alist '(("." . "~/.emacs-saves")))
+(setq backup-by-copying t)
+
 (powerline-default-theme)
 
 (menu-bar-mode -1)
