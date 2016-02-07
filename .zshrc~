@@ -85,5 +85,4 @@ source $ZSH/oh-my-zsh.sh
 #
 # use vim keybindings
 alias logtoday="vim ~/doc/logs/$(date +%F).log.yaml"
-alias xclip="xclip -selection c"
 set -o vi
