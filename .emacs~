@@ -1,38 +1,106 @@
-; I got this section from Aaron Bieber
-(require 'package)
+(require 'cl)
 
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(setq package-list
+    '(centered-cursor-mode
+		evil
+		evil-leader
+		magit
+		markdown-mode
+		org
+		powerline
+		python-mode
+		relative-line-numbers
+		yaml-mode
+		ycmd
+		zenburn-theme))
+
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
 
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-;; evil-mode!
-(require 'evil)
-(evil-mode t)
+(unless package-archive-contents
+  (package-refresh-contents))
 
-(define-key evil-normal-state-map "\C-h" 'evil-window-left)
-(define-key evil-normal-state-map "\C-j" 'evil-window-down)
-(define-key evil-normal-state-map "\C-k" 'evil-window-up)
-(define-key evil-normal-state-map "\C-l" 'evil-window-right)
+(dolist (package package-list)
+  (unless (package-installed-p package)
+	(package-install package)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq inhibit-startup-message t)
+
+(powerline-default-theme)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+(load-theme 'zenburn t)
+
+(set-default-font "Hack")
 
 (require 'centered-cursor-mode)
-(centered-cursor-mode t)
+(global-centered-cursor-mode 1)
 
-(load-theme 'solarized-dark t)
+;;
+;; ycm
+;;
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("0ad5a61e6ee6d2e7f884c0da7a6f437a4c84547514b509bdffd06757a8fc751f" "38ba6a938d67a452aeb1dada9d7cdeca4d9f18114e9fc8ed2b972573138d4664" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(require 'ycmd)
+;; (add-hook 'after-init-hook #'global-ycmd-mode)
+;; 
+;; (set-variable 'ycmd-server-command '("python" "/home/dare/.emacs.d/elpa/ycmd-0.9"))
+
+;;
+;; org-mode settings
+;;
+
+(add-to-list 'load-path (expand-file-name "~/git/org-mode/lisp"))
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(require 'org)
+
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+(setq org-default-notes-file (concat "~/org/refile.org"))
+
+(setq org-agenda-files (quote ("~/org/refile.org"
+			       "~/org/todo.org"
+			       "~/org/calastone.org")))
+
+(setq org-todo-keywords
+      '((sequence "BACKLOG"
+		  "THIS WEEK"
+		  "TODAY"
+		  "IN PROGRESS"
+		  "|"
+		  "DONE")))
+
+(setq org-todo-keyword-faces
+      (quote (("BACKLOG" :foreground "brown" :weight bold)
+              ("THIS WEEK" :foreground "red" :weight bold)
+              ("TODAY" :foreground "magenta" :weight bold)
+              ("IN PROGRESS" :foreground "blue" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold))))
+;;
+;; evil-mode settings
+;;
+
+(setq evil-leader/in-all-states 1)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
+
+(evil-mode t)
+
+(define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+(define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
+(define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+(define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+(put 'downcase-region 'disabled nil)
