@@ -60,6 +60,9 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t) 
 
+;; I always accidentally write regions
+(put 'write-region 'disabled t)
+
 ;;
 ;; emms
 ;;
@@ -86,6 +89,7 @@
 (require 'org)
 
 (setq org-startup-indented t)
+(setq org-ellipsis " \u25bc" )
 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
@@ -112,6 +116,15 @@
               ("TODO" :foreground "magenta" :weight bold)
               ("IN PROGRESS" :foreground "blue" :weight bold)
               ("DONE" :foreground "forest green" :weight bold))))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (sh . t)
+   (python . t)
+   (ditaa . t)
+   ))
+
 ;;
 ;; evil-mode settings
 ;;
@@ -121,6 +134,9 @@
 (evil-leader/set-leader ",")
 
 (evil-mode t)
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
 
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
