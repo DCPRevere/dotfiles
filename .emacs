@@ -67,9 +67,9 @@
 ;; emms
 ;;
 
-;; (require 'emms-setup)
-;; (emms-standard)
-;; (emms-default-players)
+(require 'emms-setup)
+(emms-standard)
+(emms-default-players)
 
 ;;
 ;; ycm
@@ -97,25 +97,28 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 (setq org-default-notes-file (concat "~/org/refile.org"))
-
-(setq org-agenda-files (quote ("~/org/refile.org"
-			       "~/org/todo.org"
-			       "~/org/calastone.org")))
+(setq org-agenda-files '("~/org"))
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
 
 (setq org-todo-keywords
       '((sequence "BACKLOG"
+		  "FUTURE"
 		  "THIS WEEK"
-		  "TODO"
+		  "TODAY"
 		  "IN PROGRESS"
+		  "DEPENDENCY"
 		  "|"
 		  "DONE")))
 
 (setq org-todo-keyword-faces
-      (quote (("BACKLOG" :foreground "brown" :weight bold)
-              ("THIS WEEK" :foreground "red" :weight bold)
-              ("TODO" :foreground "magenta" :weight bold)
-              ("IN PROGRESS" :foreground "blue" :weight bold)
-              ("DONE" :foreground "forest green" :weight bold))))
+      (quote (("BACKLOG"     . (:foreground  "#DC8CC3"  :weight bold))
+              ("FUTURE"      . (:foreground  "#CC9393"  :weight bold))
+              ("THIS WEEK"   . (:foreground  "#DFAF8F"  :weight bold))
+              ("TODAY"       . (:foreground  "#F0DFAF"  :weight bold))
+              ("IN PROGRESS" . (:foreground  "#7F9F7F"  :weight bold))
+              ("DEPENDENCY"  . (:foreground  "#93E0E3"  :weight bold))
+              ("DONE"        . (:foreground  "#8CD0D3"  :weight bold)))))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -143,3 +146,9 @@
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 (put 'downcase-region 'disabled nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
