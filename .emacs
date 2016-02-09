@@ -105,11 +105,11 @@
 ;; capture templates
 (setq org-capture-templates
       '(("b" "Backlog" entry (file+headline "~/org/refile.org" "Backlog")
-	 "* BACKLOG %?\n %i\n %a")
+	 "* BACKLOG %?")
 	("t" "Today" entry (file+headline "~/org/refile.org" "Tasks")
-	 "* TODAY %?\n %i\n %a")
+	 "* TODAY %?")
 	("n" "Note" entry (file+headline "~/org/refile.org" "Notes")
-	 "* REVIEW %?\n %i\n %a")
+	 "* REVIEW %?")
 	)) 
 
 (setq org-todo-keywords
