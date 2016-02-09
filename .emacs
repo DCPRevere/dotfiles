@@ -67,9 +67,9 @@
 ;; emms
 ;;
 
-(require 'emms-setup)
-(emms-standard)
-(emms-default-players)
+;; (require 'emms-setup)
+;; (emms-standard)
+;; (emms-default-players)
 
 ;;
 ;; ycm
