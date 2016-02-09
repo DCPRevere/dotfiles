@@ -84,9 +84,10 @@
 ;; org-mode settings
 ;;
 
+(require 'org)
+
 (add-to-list 'load-path (expand-file-name "~/git/org-mode/lisp"))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
-(require 'org)
 
 (setq org-startup-indented t)
 (setq org-ellipsis " \u25bc" )
@@ -98,8 +99,18 @@
 
 (setq org-default-notes-file (concat "~/org/refile.org"))
 (setq org-agenda-files '("~/org"))
-(setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                 (org-agenda-files :maxlevel . 9))))
+(setq org-refile-use-outline-path 'file)
+(setq org-refile-targets '((org-agenda-files :level . 1)))
+
+;; capture templates
+(setq org-capture-templates
+      '(("b" "Backlog" entry (file+headline "~/org/refile.org" "Backlog")
+	 "* BACKLOG %?\n %i\n %a")
+	("t" "Today" entry (file+headline "~/org/refile.org" "Tasks")
+	 "* TODAY %?\n %i\n %a")
+	("n" "Note" entry (file+headline "~/org/refile.org" "Notes")
+	 "* REVIEW %?\n %i\n %a")
+	)) 
 
 (setq org-todo-keywords
       '((sequence "BACKLOG"
@@ -118,7 +129,8 @@
               ("TODAY"       . (:foreground  "#F0DFAF"  :weight bold))
               ("IN PROGRESS" . (:foreground  "#7F9F7F"  :weight bold))
               ("DEPENDENCY"  . (:foreground  "#93E0E3"  :weight bold))
-              ("DONE"        . (:foreground  "#8CD0D3"  :weight bold)))))
+              ("DONE"        . (:foreground  "#8CD0D3"  :weight bold))
+	      )))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -127,6 +139,9 @@
    (python . t)
    (ditaa . t)
    ))
+
+;; Allows export to odt
+(setq exec-path (append exec-path '("C:/Users/danielr/.babun/cygwin/bin/")))
 
 ;;
 ;; evil-mode settings
