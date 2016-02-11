@@ -63,6 +63,28 @@
 ;; I always accidentally write regions
 (put 'write-region 'disabled t)
 
+;; define a python template
+;; copied from 'code like a pythonista'
+
+(define-skeleton python-skeleton
+  "Inserts a Python skeleton as described in 'Code like a pythonista'." nil
+  "\'\'\'module docstring\'\'\'" \n
+  "" \n
+  "# imports" \n
+  "# constants" \n
+  "# exception classes" \n
+  "# interface functions" \n
+  "# classes" \n
+  "# internal functions & classes" \n
+  "" \n
+  "def main(...):" \n
+  "    ..." \n
+  "" \n
+  "if __name__ == '__main__':" \n
+  "    status = main()" \n
+  "    sys.exit(status)" \n
+  )
+
 ;;
 ;; emms
 ;;
