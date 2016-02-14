@@ -181,20 +181,31 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
+  "e" 'eval-region
+  "g" 'magit-status
+  "p" 'package-install
   "x" 'execute-extended-command
-  "g" 'keyboard-quit
   )
 
-(evil-mode t)
+;; evil surround
 
 (require 'evil-surround)
 (global-evil-surround-mode 1)
+
+;; evil mode
+
+(evil-mode t)
 
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 (put 'downcase-region 'disabled nil)
+
+;;
+;; custom
+;;
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
