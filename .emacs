@@ -1,19 +1,22 @@
 (require 'cl)
 
 (setq package-list
-    '(centered-cursor-mode
-		evil
-		evil-leader
-		jedi
-		magit
-		markdown-mode
-		org
-		powerline
-		python-mode
-		relative-line-numbers
-		yaml-mode
-		ycmd
-		zenburn-theme))
+      '(
+	centered-cursor-mode
+	color-theme-sanityinc-tomorrow
+	evil
+	evil-leader
+	jedi
+	magit
+	markdown-mode
+	org
+	powerline
+	python-mode
+	relative-line-numbers
+	yaml-mode
+	ycmd
+	zenburn-theme
+	))
 
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
