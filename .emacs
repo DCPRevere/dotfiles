@@ -188,6 +188,7 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
+  "k" 'kill-buffer
   "e" 'eval-region
   "g" 'magit-status
   "p" 'package-install
