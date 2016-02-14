@@ -174,9 +174,16 @@
 ;; evil-mode settings
 ;;
 
+;; evil leader
+ 
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
+
+(evil-leader/set-key
+  "x" 'execute-extended-command
+  "g" 'keyboard-quit
+  )
 
 (evil-mode t)
 
