@@ -12,6 +12,7 @@
 	org
 	powerline
 	python-mode
+	rainbow-mode
 	relative-line-numbers
 	yaml-mode
 	ycmd
@@ -106,6 +107,10 @@
 ;; (add-hook 'after-init-hook #'global-ycmd-mode)
 ;; 
 ;; (set-variable 'ycmd-server-command '("python" "/home/dare/.emacs.d/elpa/ycmd-0.9"))
+
+;; rainbow mode
+
+(setq rainbow-html-colors nil)
 
 ;;
 ;; org-mode settings
