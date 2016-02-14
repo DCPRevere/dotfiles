@@ -155,14 +155,16 @@
 		  "DONE")))
 
 (setq org-todo-keyword-faces
-      (quote (("BACKLOG"     . (:foreground  "#DC8CC3"  :weight bold))
-              ("FUTURE"      . (:foreground  "#CC9393"  :weight bold))
-              ("THIS WEEK"   . (:foreground  "#DFAF8F"  :weight bold))
-              ("TODAY"       . (:foreground  "#F0DFAF"  :weight bold))
-              ("IN PROGRESS" . (:foreground  "#7F9F7F"  :weight bold))
-              ("DEPENDENCY"  . (:foreground  "#93E0E3"  :weight bold))
-              ("DONE"        . (:foreground  "#8CD0D3"  :weight bold))
+      (quote (("BACKLOG"     . (:foreground  "#999999"  :weight bold))
+              ("FUTURE"      . (:foreground  "#cccccc"  :weight bold))
+              ("THIS WEEK"   . (:foreground  "#f2777a"  :weight bold))
+              ("TODAY"       . (:foreground  "#f99157"  :weight bold))
+              ("IN PROGRESS" . (:foreground  "#ffcc66"  :weight bold))
+              ("DEPENDENCY"  . (:foreground  "#6699cc"  :weight bold))
+              ("DONE"        . (:foreground  "#99cc99"  :weight bold))
 	      )))
+
+;; #66cccc #cc99cc
 
 (org-babel-do-load-languages
  'org-babel-load-languages
