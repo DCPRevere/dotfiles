@@ -60,6 +60,8 @@
 
 (set-default-font "Hack")
 
+(setq visual-line-mode t)
+
 (require 'centered-cursor-mode)
 (global-centered-cursor-mode 1)
 
@@ -188,10 +190,11 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
-  "k" 'kill-buffer
   "e" 'eval-region
   "g" 'magit-status
+  "k" 'kill-buffer
   "p" 'package-install
+  "s" 'switch-to-buffer
   "x" 'execute-extended-command
   )
 
