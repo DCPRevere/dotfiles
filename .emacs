@@ -7,6 +7,7 @@
 	evil
 	evil-leader
 	evil-magit
+	evil-org
 	jedi
 	linum-relative
 	magit
