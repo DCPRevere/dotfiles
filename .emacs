@@ -7,6 +7,7 @@
 	evil
 	evil-leader
 	evil-magit
+	evil-org
 	jedi
 	linum-relative
 	magit
@@ -196,7 +197,6 @@
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
-(require 'evil-org)
 
 (evil-leader/set-key
   "e" 'eval-region
@@ -206,6 +206,10 @@
   "s" 'switch-to-buffer
   "x" 'execute-extended-command
   )
+
+;; evil-org
+
+(require 'evil-org)
 
 ;; evil-magit
 
