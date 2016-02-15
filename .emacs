@@ -6,6 +6,7 @@
 	color-theme-sanityinc-tomorrow
 	evil
 	evil-leader
+	evil-magit
 	jedi
 	linum-relative
 	magit
@@ -24,6 +25,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")
                          ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
 
 (setq package-enable-at-startup nil)
@@ -187,7 +189,9 @@
 ;; evil-mode settings
 ;;
 
-;; evil leader
+(require 'evil)
+
+;; evil-leader
  
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
@@ -203,12 +207,16 @@
   "x" 'execute-extended-command
   )
 
-;; evil surround
+;; evil-magit
+
+(require 'evil-magit)
+
+;; evil-surround
 
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
-;; evil mode
+;; evil-mode
 
 (evil-mode t)
 
