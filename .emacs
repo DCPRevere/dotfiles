@@ -1,19 +1,22 @@
 (require 'cl)
 
 (setq package-list
-    '(centered-cursor-mode
-		evil
-		evil-leader
-		jedi
-		magit
-		markdown-mode
-		org
-		powerline
-		python-mode
-		relative-line-numbers
-		yaml-mode
-		ycmd
-		zenburn-theme))
+      '(
+	centered-cursor-mode
+	evil
+	evil-leader
+	jedi
+	linum-relative
+	magit
+	markdown-mode
+	org
+	powerline
+	python-mode
+	relative-line-numbers
+	yaml-mode
+	ycmd
+	zenburn-theme
+	))
 
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -45,6 +48,9 @@
 (setq backup-by-copying t)
 
 (powerline-default-theme)
+
+(require 'linum-relative)
+(linum-on)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -122,7 +128,7 @@
 (setq org-default-notes-file (concat "~/org/refile.org"))
 (setq org-agenda-files '("~/org"))
 (setq org-refile-use-outline-path 'file)
-(setq org-refile-targets '((org-agenda-files :level . 1)))
+(setq org-refile-targets '((org-agenda-files :maxlevel . 9)))
 
 ;; capture templates
 (setq org-capture-templates
@@ -172,11 +178,18 @@
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
+(require 'evil-org)
 
 (evil-mode t)
 
 (require 'evil-surround)
 (global-evil-surround-mode 1)
+
+;; I dislike the behaviour of 'o' and 'O' in evil-org.
+;; I redfine them to their evil-mode maps.
+(evil-define-key 'normal evil-org-mode-map
+  "o" 'evil-open-below
+  "O" 'evil-open-above)
 
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
