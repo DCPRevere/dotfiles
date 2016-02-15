@@ -69,6 +69,8 @@
 
 (setq visual-line-mode t)
 
+(setq ad-redefinition-action 'accept)
+
 (require 'centered-cursor-mode)
 (global-centered-cursor-mode 1)
 
