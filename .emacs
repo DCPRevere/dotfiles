@@ -1,25 +1,25 @@
 (require 'cl)
 
 (setq package-list
-      '(
-	centered-cursor-mode
-	color-theme-sanityinc-tomorrow
-	evil
-	evil-leader
-	;; evil-magit
-	jedi
-	linum-relative
-	magit
-	markdown-mode
-	org
-	powerline
-	python-mode
-	rainbow-mode
-	relative-line-numbers
-	yaml-mode
-	ycmd
-	zenburn-theme
-	))
+     '(
+       centered-cursor-mode
+       color-theme-sanityinc-tomorrow
+       evil
+       evil-leader
+       ;; evil-magit
+       jedi
+       linum-relative
+       magit
+       markdown-mode
+       org
+       powerline
+       python-mode
+       rainbow-mode
+       relative-line-numbers
+       yaml-mode
+       ycmd
+       zenburn-theme
+       ))
 
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -27,7 +27,7 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
                          ;;("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
-						 ))
+                         ))
 
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -44,7 +44,9 @@
 (let ((default-directory "~/.emacs.d/lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq inhibit-startup-message t)
@@ -220,6 +222,7 @@
 
 ;; evil-mode
 
+(require 'evil)
 (evil-mode t)
 
 ;; I dislike the behaviour of 'o' and 'O' in evil-org.
@@ -234,6 +237,13 @@
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 (put 'downcase-region 'disabled nil)
+
+;;  setq evil-emacs-state-cursor    '("red"           box)
+;; 	  evil-normal-state-cursor   '("lawn green"    box)
+;; 	  evil-visual-state-cursor   '("orange"        box)
+;; 	  evil-insert-state-cursor   '("deep sky blue" bar)
+;; 	  evil-replace-state-cursor  '("red"           bar)
+;; 	  evil-operator-state-cursor '("red"           hollow))
 
 ;;
 ;; custom
