@@ -6,7 +6,7 @@
 	color-theme-sanityinc-tomorrow
 	evil
 	evil-leader
-	evil-magit
+	;; evil-magit
 	jedi
 	linum-relative
 	magit
@@ -26,7 +26,8 @@
                          ("org" . "http://orgmode.org/elpa/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
-                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
+                         ;;("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
+						 ))
 
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -196,7 +197,6 @@
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
-(require 'evil-org)
 
 (evil-leader/set-key
   "e" 'eval-region
@@ -207,14 +207,16 @@
   "x" 'execute-extended-command
   )
 
+;; (require 'evil-org)
+
 ;; evil-magit
 
-(require 'evil-magit)
+;; (require 'evil-magit)
 
 ;; evil-surround
 
-(require 'evil-surround)
-(global-evil-surround-mode 1)
+;; (require 'evil-surround)
+;; (global-evil-surround-mode 1)
 
 ;; evil-mode
 
@@ -222,9 +224,9 @@
 
 ;; I dislike the behaviour of 'o' and 'O' in evil-org.
 ;; I redfine them to their evil-mode maps.
-(evil-define-key 'normal evil-org-mode-map
-  "o" 'evil-open-below
-  "O" 'evil-open-above)
+;; (evil-define-key 'normal evil-org-mode-map
+  ;; "o" 'evil-open-below
+  ;; "O" 'evil-open-above)
 
 ;; Change window keys
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
