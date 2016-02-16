@@ -6,7 +6,9 @@
        color-theme-sanityinc-tomorrow
        evil
        evil-leader
-       ;; evil-magit
+       evil-magit
+       evil-org
+       evil-surround
        jedi
        linum-relative
        magit
@@ -48,21 +50,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;; startup display
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq inhibit-startup-message t)
-
-;; backup
-(setq backup-directory-alist '(("." . "~/.emacs-saves")))
-(setq backup-by-copying t)
-
-(powerline-default-theme)
-
-(require 'linum-relative)
-(linum-on)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+(powerline-default-theme)
 
 (require 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-eighties t)
@@ -74,15 +70,15 @@
 (require 'centered-cursor-mode)
 (global-centered-cursor-mode 1)
 
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t) 
+;; backup
+(setq backup-directory-alist '(("." . "~/.emacs-saves")))
+(setq backup-by-copying t)
 
 ;; I always accidentally write regions
 (put 'write-region 'disabled t)
 
 ;; define a python template
 ;; copied from 'code like a pythonista'
-
 (define-skeleton python-skeleton
   "Inserts a Python skeleton as described in 'Code like a pythonista'." nil
   "\'\'\'module docstring\'\'\'" \n
@@ -102,25 +98,8 @@
   "    sys.exit(status)" \n
   )
 
-;;
-;; emms
-;;
-
-;; (require 'emms-setup)
-;; (emms-standard)
-;; (emms-default-players)
-
-;;
-;; ycm
-;;
-
-;; (require 'ycmd)
-;; (add-hook 'after-init-hook #'global-ycmd-mode)
-;; 
-;; (set-variable 'ycmd-server-command '("python" "/home/dare/.emacs.d/elpa/ycmd-0.9"))
-
 ;; rainbow mode
-
+(require 'rainbow-mode)
 (setq rainbow-html-colors nil)
 
 ;;
@@ -165,6 +144,7 @@
 		  "|"
 		  "DONE")))
 
+;; define a custom color palette
 (setq color-dark-grey  "#999999" )
 (setq color-light-grey "#cccccc" )
 (setq color-red        "#f2777a" )
@@ -217,7 +197,7 @@
   "x" 'execute-extended-command
   )
 
-;; (require 'evil-org)
+(require 'evil-org)
 
 ;; evil-magit
 
@@ -225,8 +205,8 @@
 
 ;; evil-surround
 
-;; (require 'evil-surround)
-;; (global-evil-surround-mode 1)
+(require 'evil-surround)
+(global-evil-surround-mode 1)
 
 ;; evil-mode
 
@@ -235,9 +215,9 @@
 
 ;; I dislike the behaviour of 'o' and 'O' in evil-org.
 ;; I redfine them to their evil-mode maps.
-;; (evil-define-key 'normal evil-org-mode-map
-  ;; "o" 'evil-open-below
-  ;; "O" 'evil-open-above)
+(evil-define-key 'normal evil-org-mode-map
+  "o" 'evil-open-below
+  "O" 'evil-open-above)
 
 ;; Change window keys
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
