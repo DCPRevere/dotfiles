@@ -165,14 +165,22 @@
 		  "|"
 		  "DONE")))
 
+(setq color-dark-grey  "#999999" )
+(setq color-light-grey "#cccccc" )
+(setq color-red        "#f2777a" )
+(setq color-orange     "#f99157" )
+(setq color-yellow     "#ffcc66" )
+(setq color-blue       "#6699cc" )
+(setq color-green      "#99cc99" )
+
 (setq org-todo-keyword-faces
-      (quote (("BACKLOG"     . (:foreground  "#999999"  :weight bold))
-              ("FUTURE"      . (:foreground  "#cccccc"  :weight bold))
-              ("THIS WEEK"   . (:foreground  "#f2777a"  :weight bold))
-              ("TODAY"       . (:foreground  "#f99157"  :weight bold))
-              ("IN PROGRESS" . (:foreground  "#ffcc66"  :weight bold))
-              ("DEPENDENCY"  . (:foreground  "#6699cc"  :weight bold))
-              ("DONE"        . (:foreground  "#99cc99"  :weight bold))
+      (quote (("BACKLOG"     . (:foreground "#999999" :weight bold))
+              ("FUTURE"      . (:foreground "#cccccc" :weight bold))
+              ("THIS WEEK"   . (:foreground "#f2777a" :weight bold))
+              ("TODAY"       . (:foreground "#f99157" :weight bold))
+              ("IN PROGRESS" . (:foreground "#ffcc66" :weight bold))
+              ("DEPENDENCY"  . (:foreground "#6699cc" :weight bold))
+              ("DONE"        . (:foreground "#99cc99" :weight bold))
 	      )))
 
 ;; #66cccc #cc99cc
@@ -238,12 +246,12 @@
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 (put 'downcase-region 'disabled nil)
 
-;;  setq evil-emacs-state-cursor    '("red"           box)
-;; 	  evil-normal-state-cursor   '("lawn green"    box)
-;; 	  evil-visual-state-cursor   '("orange"        box)
-;; 	  evil-insert-state-cursor   '("deep sky blue" bar)
-;; 	  evil-replace-state-cursor  '("red"           bar)
-;; 	  evil-operator-state-cursor '("red"           hollow))
+(setq evil-emacs-state-cursor    '( "#ffcc66" box)
+      evil-normal-state-cursor   '( "#ffcc66" box)
+      evil-visual-state-cursor   '( "#ffcc66" box)
+      evil-insert-state-cursor   '( "#ffcc66" bar)
+      evil-replace-state-cursor  '( "#ffcc66" bar)
+      evil-operator-state-cursor '( "#ffcc66" hollow))
 
 ;;
 ;; custom
