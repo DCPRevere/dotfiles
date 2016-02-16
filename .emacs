@@ -7,7 +7,6 @@
 	evil
 	evil-leader
 	evil-magit
-	evil-org
 	jedi
 	linum-relative
 	magit
@@ -68,8 +67,6 @@
 (set-default-font "Hack")
 
 (setq visual-line-mode t)
-
-(setq ad-redefinition-action 'accept)
 
 (require 'centered-cursor-mode)
 (global-centered-cursor-mode 1)
@@ -189,27 +186,17 @@
 (setq exec-path (append exec-path '("C:/Users/danielr/.babun/cygwin/bin/")))
 
 ;;
-;; magit
-;;
-
-(require 'magit)
-
-
-
-
-;;
 ;; evil-mode settings
 ;;
 
 (require 'evil)
-(evil-mode t)
 
 ;; evil-leader
-(require 'evil-leader)
-
+ 
 (setq evil-leader/in-all-states 1)
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
+(require 'evil-org)
 
 (evil-leader/set-key
   "e" 'eval-region
@@ -220,21 +207,24 @@
   "x" 'execute-extended-command
   )
 
-;; evil-org
-(require 'evil-org)
-
 ;; evil-magit
-;; (require 'evil-magit)
+
+(require 'evil-magit)
 
 ;; evil-surround
+
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
+;; evil-mode
+
+(evil-mode t)
+
 ;; I dislike the behaviour of 'o' and 'O' in evil-org.
 ;; I redfine them to their evil-mode maps.
-;; (evil-define-key 'normal evil-org-mode-map
-;;   "o" 'evil-open-below
-;;   "O" 'evil-open-above)
+(evil-define-key 'normal evil-org-mode-map
+  "o" 'evil-open-below
+  "O" 'evil-open-above)
 
 ;; Change window keys
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
