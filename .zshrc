@@ -86,4 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # use vim keybindings
 alias logtoday="vim ~/doc/logs/$(date +%F).log.yaml"
 alias xclip="xclip -selection c"
+alias gpull="git pull origin master"
+alias gpush="git push origin master"
+
 set -o vi
