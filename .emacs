@@ -98,6 +98,8 @@
   "    sys.exit(status)" \n
   )
 
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; rainbow mode
 (require 'rainbow-mode)
 (setq rainbow-html-colors nil)
@@ -189,6 +191,7 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
+  "c" 'org-capture
   "e" 'eval-region
   "g" 'magit-status
   "k" 'kill-buffer
