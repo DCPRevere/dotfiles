@@ -72,7 +72,7 @@
 
 ;; backup
 (setq backup-directory-alist '(("." . "~/.emacs-saves")))
-(setq backup-by-copying t)
+(setq backup-by-copying nil)
 
 ;; I always accidentally write regions
 (put 'write-region 'disabled t)
@@ -123,6 +123,7 @@
 
 (setq org-default-notes-file (concat "~/org/refile.org"))
 (setq org-agenda-files '("~/org"))
+(setq org-archive-location "~/org/archive/%s_archive::")
 (setq org-refile-use-outline-path 'file)
 (setq org-refile-targets '((org-agenda-files :maxlevel . 9)))
 
