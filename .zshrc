@@ -86,7 +86,12 @@ source $ZSH/oh-my-zsh.sh
 # use vim keybindings
 alias logtoday="vim ~/doc/logs/$(date +%F).log.yaml"
 alias xclip="xclip -selection c"
+
 alias gpull="git pull origin master"
 alias gpush="git push origin master"
 
+alias update="sudo apt-get update"
+alias upgrade="sudo apt-get upgrade"
+
 set -o vi
+alias install="sudo apt-get install"
