@@ -104,6 +104,11 @@
 (require 'rainbow-mode)
 (setq rainbow-html-colors nil)
 
+;; ;; helm
+;; ;; Install Helm via git
+;; (require 'helm-config)
+;; (helm-mode 1)
+
 ;;
 ;; org-mode settings
 ;;
