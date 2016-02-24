@@ -143,14 +143,14 @@
 	)) 
 
 (setq org-todo-keywords
-      '((sequence "BACKLOG"
-		  "FUTURE"
-		  "THIS WEEK"
-		  "TODAY"
-		  "IN PROGRESS"
-		  "DEPENDENCY"
-		  "|"
-		  "DONE")))
+      '((sequence
+	 "BACKLOG"
+	 "LISTED"
+	 "DEPENDENCY"
+	 "PROGRESS"
+	 "|"
+	 "DONE"
+	 )))
 
 ;; define a custom color palette
 (setq color-dark-grey  "#999999" )
@@ -162,13 +162,11 @@
 (setq color-green      "#99cc99" )
 
 (setq org-todo-keyword-faces
-      (quote (("BACKLOG"     . (:foreground "#999999" :weight bold))
-              ("FUTURE"      . (:foreground "#cccccc" :weight bold))
-              ("THIS WEEK"   . (:foreground "#f2777a" :weight bold))
-              ("TODAY"       . (:foreground "#f99157" :weight bold))
-              ("IN PROGRESS" . (:foreground "#ffcc66" :weight bold))
-              ("DEPENDENCY"  . (:foreground "#6699cc" :weight bold))
-              ("DONE"        . (:foreground "#99cc99" :weight bold))
+      (quote (("BACKLOG"	.	(:foreground "#999999" :weight bold))
+              ("LISTED"		.	(:foreground "#f2777a" :weight bold))
+              ("DEPENDENCY"	.	(:foreground "#f99157" :weight bold))
+              ("PROGRESS"	.	(:foreground "#6699cc" :weight bold))
+              ("DONE"		.	(:foreground "#99cc99" :weight bold))
 	      )))
 
 ;; #66cccc #cc99cc
