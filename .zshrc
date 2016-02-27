@@ -96,7 +96,7 @@ alias upgrade="sudo apt-get upgrade"
 set -o vi
 alias install="sudo apt-get install"
 
-source ~/.zsh.d/zsh-history-substring-search.zsh
+source ~/.zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
