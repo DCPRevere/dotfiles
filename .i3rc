@@ -155,3 +155,19 @@ bar {
 focus_follows_mouse no
 
 bindsym $mod+q exec "$HOME/.i3/lock.sh"
+
+# #542437
+# #547980
+# #3B8686
+# #0B486B
+# #53777A
+# #C02942
+# #542437
+# #413E4A
+# #73626E
+
+#name                   #top    #border #text
+client.focused          #413E4A #73626E #413E4A #413E4A
+client.unfocused        #413E4A #413E4A #73626E #413E4A
+client.focused_inactive #413E4A #413E4A #73626E #413E4A
+client.urgent           #413E4A #413E4A #73626E #413E4A
