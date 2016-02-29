@@ -154,7 +154,7 @@ bar {
 
 focus_follows_mouse no
 
-bindsym $mod+q exec "$HOME/.i3/lock.sh"
+bindsym $mod+q exec "$HOME/.i3/lock.sh $HOME/.i3/lock.png"
 
 # #542437
 # #547980
