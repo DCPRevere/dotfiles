@@ -148,8 +148,50 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
 
 focus_follows_mouse no
+
+bindsym $mod+q exec "$HOME/.i3/lock.sh $HOME/.i3/lock.png"
+
+# #542437
+# #547980
+# #3B8686
+# #0B486B
+# #53777A
+# #C02942
+# #542437
+# #413E4A
+# #73626E
+# #B38184
+# #F0B49E
+# #F7E4BE
+# 
+# #2d2d2d Background
+# #393939 Current Line
+# #515151 Selection
+# #cccccc Foreground
+# #999999 Comment
+# #f2777a Red
+# #f99157 Orange
+# #ffcc66 Yellow
+# #99cc99 Green
+# #66cccc Aqua
+# #6699cc Blue
+# #cc99cc Purple
+
+#name                   #top    #border #text
+client.focused          #111111 #515151 #111111 #111111
+client.unfocused        #2d2d2d #2d2d2d #999999 #2d2d2d
+client.focused_inactive #2d2d2d #2d2d2d #999999 #2d2d2d
+client.urgent           #2d2d2d #2d2d2d #999999 #2d2d2d
+
+bar {
+ colors {
+        background #2d2d2d
+        separator  #515151
+        statusline #f99157
+    }
+    # i3status.conf defines some text colours
+    status_command i3status -c ~/.i3/i3status.conf
+}
+
