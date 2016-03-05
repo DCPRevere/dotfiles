@@ -90,11 +90,11 @@ alias xclip="xclip -selection c"
 alias gpull="git pull origin master"
 alias gpush="git push origin master"
 
-alias update="sudo apt-get update"
-alias upgrade="sudo apt-get upgrade"
+alias update="apt-get update"
+alias upgrade="apt-get upgrade"
 
 set -o vi
-alias install="sudo apt-get install"
+alias install="apt-get install"
 
 export EDITOR="/usr/bin/vim"
 
