@@ -82,19 +82,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-# use vim keybindings
+
+set -o vi
+
+alias sudo="sudo "
+
 alias logtoday="vim ~/doc/logs/$(date +%F).log.yaml"
 alias xclip="xclip -selection c"
 
-alias gpull="git pull origin master"
-alias gpush="git push origin master"
-
 alias update="apt-get update"
 alias upgrade="apt-get upgrade"
-
-set -o vi
 alias install="apt-get install"
+
+# git aliases
+alias g="git"
+alias gstat="git status"
+alias gpull="git pull origin master"
+alias gpush="git push origin master"
 
 export EDITOR="/usr/bin/vim"
 
