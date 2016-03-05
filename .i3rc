@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 
 focus_follows_mouse no
 
-bindsym $mod+q exec "$HOME/.i3/lock.sh $HOME/.i3/lock.png"
+bindsym $mod+q exec "$HOME/.i3/lock.sh $HOME/.i3/lock-gray.png"
 
 # #542437
 # #547980
@@ -199,4 +199,3 @@ bar {
     # i3status.conf defines some text colours
     status_command i3status -c ~/.i3/i3status.conf
 }
-

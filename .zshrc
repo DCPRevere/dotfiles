@@ -94,6 +94,8 @@ alias update="apt-get update"
 alias upgrade="apt-get upgrade"
 alias install="apt-get install"
 
+alias py="python"
+
 # git aliases
 alias g="git"
 alias gstat="git status"
