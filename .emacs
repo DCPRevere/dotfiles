@@ -63,7 +63,7 @@
 (require 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-eighties t)
 
-(set-default-font "Hack")
+(set-default-font "Hack-15")
 
 (setq visual-line-mode t)
 
