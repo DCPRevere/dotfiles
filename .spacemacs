@@ -281,11 +281,11 @@ you should place you code here."
                               :width normal
                               :powerline-scale 1.1))
 
-  ;; custom keybindings
-  (global-set-key (kbd "C-h") 'evil-window-left)
-  (global-set-key (kbd "C-j") 'evil-window-down)
-  (global-set-key (kbd "C-k") 'evil-window-up)
-  (global-set-key (kbd "C-l") 'evil-window-right)
+  ;; ;; custom keybindings
+  ;; (global-set-key (kbd "C-h") 'evil-window-left)
+  ;; (global-set-key (kbd "C-j") 'evil-window-down)
+  ;; (global-set-key (kbd "C-k") 'evil-window-up)
+  ;; (global-set-key (kbd "C-l") 'evil-window-right)
 
   ;; spacemacs leader keys
   (spacemacs/set-leader-keys "oc" 'org-capture
