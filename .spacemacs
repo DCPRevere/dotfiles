@@ -58,7 +58,9 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    org-bullets
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -369,9 +371,11 @@ you should place you code here."
    '(org-level-4 ((t (:inherit org-default :height 1.0))))
    '(org-level-5 ((t (:inherit org-default :height 1.0))))
    )
-  ;; change the display of asterisks in org
-  ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
-  (setq org-bullet-mode t)
+  ;; ;; change the display of asterisks in org
+  ;; ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
+  ;; (setq org-bullet-mode nil)
+  ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode nil)))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
