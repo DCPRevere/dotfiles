@@ -1,4 +1,4 @@
-;; -*- mode: emacs-lisp -*-
+;;yh -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -6,6 +6,7 @@
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
 values."
+  (layers-dacopare)
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -16,42 +17,7 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     auto-completion
-     better-defaults
-     c-c++
-     colors
-     csharp
-     django
-     emacs-lisp
-     git
-     html
-     java
-     markdown
-     org
-     python
-     ruby
-     shell
-     shell-scripts
-     spell-checking
-     sql
-     syntax-checking
-     version-control
-     vimscript
-     windows-scripts
-     yaml
-     (spell-checking :variables
-                     spell-checking-enable-by-default nil)
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     )
+   dotspacemacs-configuration-layers my-layer-list
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -375,8 +341,52 @@ you should place you code here."
   ;; ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
   ;; (setq org-bullet-mode nil)
   ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode nil)))
-
   )
+
+(defun layers-dacopare ()
+   (setq spell-checking-mod '(spell-checking :variables
+                                             spell-checking-enable-by-default nil))
+   (setq auto-completion-mod '(auto-completion :variables
+                                               auto-completion-return-key-behavior              nil
+                                               auto-completion-tab-key-behavior                 'cycle
+                                               auto-completion-complete-with-key-sequence       "jk"
+                                               auto-completion-complete-with-key-sequence-delay 0.1
+                                               auto-completion-private-snippets-directory       nil
+                                               auto-completion-enable-snippets-in-popup         t
+                                               auto-completion-enable-sort-by-usage             t
+                                               ))
+
+   (setq custom-layers (list
+                        auto-completion-mod
+                        spell-checking-mod
+                        ))
+   (setq standard-layers '(
+                           better-defaults
+                           c-c++
+                           colors
+                           csharp
+                           django
+                           emacs-lisp
+                           git
+                           html
+                           java
+                           markdown
+                           org
+                           python
+                           ruby
+                           shell
+                           shell-scripts
+                           sql
+                           syntax-checking
+                           version-control
+                           vimscript
+                           windows-scripts
+                           yaml
+                           ))
+
+   (setq my-layer-list  (append standard-layers custom-layers))
+   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
