@@ -263,6 +263,7 @@ you should place you code here."
     "op" 'package-install
     "os" 'switch-to-buffer
     "ox" 'execute-extended-command
+    "oy" 'hippie-expand
     )
 
   ;; move backups to .emacs-saves
