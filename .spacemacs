@@ -349,7 +349,7 @@ you should place you code here."
                                              spell-checking-enable-by-default nil))
    (setq auto-completion-mod '(auto-completion :variables
                                                auto-completion-return-key-behavior              nil
-                                               auto-completion-tab-key-behavior                 'cycle
+                                               auto-completion-tab-key-behavior                 'complete
                                                auto-completion-complete-with-key-sequence       "jk"
                                                auto-completion-complete-with-key-sequence-delay 0.1
                                                auto-completion-private-snippets-directory       nil
