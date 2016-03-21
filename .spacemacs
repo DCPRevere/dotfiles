@@ -266,6 +266,9 @@ you should place you code here."
     "oy" 'hippie-expand
     )
 
+  ;; automatically enter insert mode when capturing
+  (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
   ;; move backups to .emacs-saves
   (setq backup-directory-alist '(("." . "~/.emacs-saves")))
   (setq backup-by-copying nil)
