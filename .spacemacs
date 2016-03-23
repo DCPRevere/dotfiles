@@ -244,7 +244,7 @@ you should place you code here."
 
   ;; set default font
   (setq dotspacemacs-default-font '("Hack"
-                              :size 13
+                              :size 15
                               :weight normal
                               :width normal
                               :powerline-scale 1.1))
