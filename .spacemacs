@@ -388,6 +388,7 @@ you should place you code here."
                            windows-scripts
                            yaml
                            ))
+                          dockerfile
 
    (setq my-layer-list  (append standard-layers custom-layers))
    )
