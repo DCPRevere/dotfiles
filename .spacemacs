@@ -349,49 +349,49 @@ you should place you code here."
   )
 
 (defun layers-dacopare ()
-   (setq spell-checking-mod '(spell-checking :variables
-                                             spell-checking-enable-by-default nil))
-   (setq auto-completion-mod '(auto-completion :variables
-                                               auto-completion-return-key-behavior              nil
-                                               auto-completion-tab-key-behavior                 'complete
-                                               auto-completion-complete-with-key-sequence       "jk"
-                                               auto-completion-complete-with-key-sequence-delay 0.1
-                                               auto-completion-private-snippets-directory       nil
-                                               auto-completion-enable-snippets-in-popup         t
-                                               auto-completion-enable-sort-by-usage             t
-                                               ))
+  (setq spell-checking-mod '(spell-checking :variables
+                                            spell-checking-enable-by-default nil))
+  (setq auto-completion-mod '(auto-completion :variables
+                                              auto-completion-return-key-behavior              nil
+                                              auto-completion-tab-key-behavior                 'complete
+                                              auto-completion-complete-with-key-sequence       "jk"
+                                              auto-completion-complete-with-key-sequence-delay 0.1
+                                              auto-completion-private-snippets-directory       nil
+                                              auto-completion-enable-snippets-in-popup         t
+                                              auto-completion-enable-sort-by-usage             t
+                                              ))
 
-   (setq custom-layers (list
-                        auto-completion-mod
-                        spell-checking-mod
-                        ))
-   (setq standard-layers '(
-                           better-defaults
-                           c-c++
-                           colors
-                           csharp
-                           django
-                           emacs-lisp
-                           git
-                           html
-                           java
-                           markdown
-                           org
-                           python
-                           ruby
-                           shell
-                           shell-scripts
-                           sql
-                           syntax-checking
-                           version-control
-                           vimscript
-                           windows-scripts
-                           yaml
-                           ))
+  (setq custom-layers (list
+                       auto-completion-mod
+                       spell-checking-mod
+                       ))
+  (setq standard-layers '(
+                          better-defaults
+                          c-c++
+                          colors
+                          csharp
+                          django
                           dockerfile
+                          emacs-lisp
+                          git
+                          html
+                          java
+                          markdown
+                          org
+                          python
+                          ruby
+                          shell
+                          shell-scripts
+                          sql
+                          syntax-checking
+                          version-control
+                          vimscript
+                          windows-scripts
+                          yaml
+                          ))
 
-   (setq my-layer-list  (append standard-layers custom-layers))
-   )
+  (setq my-layer-list  (append standard-layers custom-layers))
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
