@@ -342,6 +342,10 @@ you should place you code here."
   ;; ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
   ;; (setq org-bullet-mode nil)
   ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode nil)))
+
+  ;; enter evil-insert-state when capturing
+  (add-hook 'org-capture-mode-hook 'evil-insert-state)
+  (add-hook 'org-insert-heading-hook 'evil-insert-state)
   )
 
 (defun layers-dacopare ()
