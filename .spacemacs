@@ -372,6 +372,10 @@ you should place you code here."
                           csharp
                           django
                           dockerfile
+                          selectric
+                          xkcd
+                          emoji
+                          games
                           emacs-lisp
                           git
                           html
