@@ -95,6 +95,8 @@ alias upgrade="apt-get upgrade"
 alias install="apt-get install"
 
 alias py="python"
+alias p3="python3"
+export VIRTUALENV_PYTHON=/usr/bin/python3
 
 # git aliases
 alias g="git"
