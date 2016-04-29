@@ -199,3 +199,6 @@ bar {
     # i3status.conf defines some text colours
     status_command i3status -c ~/.i3/i3status.conf
 }
+
+bindsym $mod+g exec google-chrome
+bindsym $mod+m exec emacs
