@@ -199,3 +199,10 @@ bar {
     # i3status.conf defines some text colours
     status_command i3status -c ~/.i3/i3status.conf
 }
+
+bindsym $mod+g exec google-chrome
+bindsym $mod+m exec emacs
+
+exec --no-startup-id i3-msg 'workspace 8; exec i3-sensible-terminal; workspace 1'
+exec --no-startup-id i3-msg 'workspace 9; exec emacs; workspace 1'
+exec --no-startup-id i3-msg 'workspace 10; exec google-chrome; workspace 1'

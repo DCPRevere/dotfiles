@@ -127,3 +127,4 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 xset r rate 175 40
+alias venv=virtualenv
