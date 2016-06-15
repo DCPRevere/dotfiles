@@ -371,22 +371,24 @@ you should place you code here."
   (setq standard-layers '(
                           better-defaults
                           c-c++
+                          clojure-mode
                           colors
                           csharp
                           django
                           dockerfile
-                          selectric
-                          xkcd
+                          emacs-lisp
                           emoji
                           games
-                          emacs-lisp
                           git
+                          gnus
+                          go
                           html
                           java
                           markdown
                           org
                           python
                           ruby
+                          selectric
                           shell
                           shell-scripts
                           sql
