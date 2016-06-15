@@ -21,6 +21,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/code/go
+
 # venv stuff
 export WORKON_HOME=$HOME/code/venvs
 export PROJECT_HOME=$HOME/code
