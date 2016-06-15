@@ -394,12 +394,12 @@ you should place you code here."
                           version-control
                           vimscript
                           windows-scripts
+                          xkcd
                           yaml
                           ))
 
   (setq my-layer-list  (append standard-layers custom-layers))
   )
-
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
