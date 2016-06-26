@@ -25,7 +25,7 @@ fi
 
 # go
 export GOPATH=$HOME/code/go
-export PATH=$PATH:/usr/local/go/bin:/home/dare/code/go/bin
+export PATH=$PATH:/home/dare/bin:/usr/local/go/bin:/home/dare/code/go/bin
 
 # venv stuff
 export WORKON_HOME=$HOME/code/venvs
