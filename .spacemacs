@@ -268,8 +268,10 @@ you should place you code here."
   ;; (global-set-key (kbd "C-l") 'evil-window-right)
 
   ;; spacemacs leader keys
-  (spacemacs/set-leader-keys "oc" 'org-capture
+  (spacemacs/set-leader-keys
+    "oc" 'org-capture
     "oe" 'eval-region
+    "of" 'new-frame
     "og" 'magit-status
     "ok" 'kill-buffer
     "op" 'package-install
