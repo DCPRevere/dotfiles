@@ -155,3 +155,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 xset r rate 175 40
 alias venv=virtualenv
+
+source ~/git/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
