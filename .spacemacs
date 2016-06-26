@@ -90,8 +90,13 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   ;; dotspacemacs-default-font '("Source Code Pro"
+   ;;                             :size 13
+   ;;                             :weight normal
+   ;;                             :width normal
+   ;;                             :powerline-scale 1.1)
+   dotspacemacs-default-font '("Hack"
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -242,12 +247,19 @@ you should place you code here."
   ;; set default theme
   (setq-default dotspacemacs-themes '(spacemacs-dark sanityinc-tomorrow-eighties))
 
-  ;; set default font
-  (setq dotspacemacs-default-font '("Hack"
-                              :size 15
-                              :weight normal
-                              :width normal
-                              :powerline-scale 1.1))
+  ;; ;; ;; set default font
+  ;; ;; (setq dotspacemacs-default-font '("Hack"
+  ;; ;;                             :size 15
+  ;; ;;                             :weight normal
+  ;; ;;                             :width normal
+  ;; ;;                             :powerline-scale 1.1))
+
+  ;; ;; set font
+  ;; (setq dotspacemacs-font '("Hack"
+  ;;                           :size 25
+  ;;                           :weight normal
+  ;;                           :width normal
+  ;;                           :powerline-scale 1.1))
 
   ;; ;; custom keybindings
   ;; (global-set-key (kbd "C-h") 'evil-window-left)
@@ -371,28 +383,43 @@ you should place you code here."
   (setq standard-layers '(
                           better-defaults
                           c-c++
-                          clojure-mode
+                          clojure
                           colors
+                          common-lisp
                           csharp
                           django
                           dockerfile
+                          elixir
                           emacs-lisp
                           emoji
+                          erlang
+                          finance
+                          fsharp
                           games
                           git
                           gnus
                           go
+                          gtags
+                          haskell
                           html
                           java
+                          javascript
+                          latex
+                          lua
                           markdown
                           org
                           python
                           ruby
+                          rust
+                          scala
+                          scheme
                           selectric
                           shell
                           shell-scripts
+                          spotify
                           sql
                           syntax-checking
+                          themes-megapack
                           version-control
                           vimscript
                           windows-scripts
