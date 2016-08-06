@@ -92,13 +92,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   ;; dotspacemacs-default-font '("Source Code Pro"
-   ;;                             :size 13
-   ;;                             :weight normal
-   ;;                             :width normal
-   ;;                             :powerline-scale 1.1)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 19
+                               :size 17
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -231,6 +226,27 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (setq comp-settings '(("phobos" .
+                         ((font-size . 25)))
+                        ("deimos" .
+                         ((font-size . 19)))))
+
+  ;; TODO: this needs to change to manage the case where the key doesn't exist
+  ;; in the map.
+  (defun fetch-setting (setting)
+    (cdr (assoc setting
+                (cdr (assoc system-name comp-settings)))))
+
+  (defun fetch-font-size ()
+    (fetch-setting 'font-size))
+
+  (setq
+   dotspacemacs-default-font `("Source Code Pro"
+                               :size ,(fetch-font-size)
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1))
 
   ;; stops spacemacs hanging on startup, caused by tramp
   (setq tramp-ssh-controlmaster-options
