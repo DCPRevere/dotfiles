@@ -379,33 +379,56 @@ you should place you code here."
   (setq standard-layers '(
                           better-defaults
                           c-c++
+                          chinese
                           clojure
                           colors
                           common-lisp
                           csharp
+                          dash
                           django
                           dockerfile
+                          elixir
                           emacs-lisp
                           emoji
+                          erlang
+                          finance
+                          fsharp
                           games
                           git
+                          gnus
+                          go
                           gtags
+                          gtags
+                          haskell
                           html
                           java
+                          javascript
+                          latex
+                          lua
                           markdown
                           org
+                          pandoc
                           python
+                          ranger
+                          restclient
                           ruby
+                          rust
+                          scala
+                          scheme
                           selectric
                           shell
                           shell-scripts
+                          spotify
                           sql
                           syntax-checking
+                          themes-megapack
+                          vagrant
                           version-control
                           vimscript
                           windows-scripts
                           xkcd
                           yaml
+                          ycmd
                           ))
 
   (setq my-layer-list  (append standard-layers custom-layers))
