@@ -22,7 +22,9 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      org-plus-contrib
+                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
                                     org-bullets
@@ -96,7 +98,7 @@ values."
    ;;                             :width normal
    ;;                             :powerline-scale 1.1)
    dotspacemacs-default-font '("Hack"
-                               :size 15
+                               :size 19
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -244,6 +246,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
+  (setq clojure-enable-fancify-symbols t)
+
   ;; set default theme
   (setq-default dotspacemacs-themes '(spacemacs-dark sanityinc-tomorrow-eighties))
 
@@ -366,29 +370,35 @@ you should place you code here."
   )
 
 (defun layers-dacopare ()
-  (setq spell-checking-mod '(spell-checking :variables
-                                            spell-checking-enable-by-default nil))
-  (setq auto-completion-mod '(auto-completion :variables
-                                              auto-completion-return-key-behavior              nil
-                                              auto-completion-tab-key-behavior                 'complete
-                                              auto-completion-complete-with-key-sequence       "jk"
-                                              auto-completion-complete-with-key-sequence-delay 0.1
-                                              auto-completion-private-snippets-directory       nil
-                                              auto-completion-enable-snippets-in-popup         t
-                                              auto-completion-enable-sort-by-usage             t
-                                              ))
+
+  (setq spell-checking-mod '(spell-checking
+                             :variables spell-checking-enable-by-default nil))
+
+  (setq auto-completion-mod '(auto-completion
+                              :variables
+                              auto-completion-return-key-behavior              nil
+                              auto-completion-tab-key-behavior                 'complete
+                              auto-completion-complete-with-key-sequence       "jk"
+                              auto-completion-complete-with-key-sequence-delay 0.1
+                              auto-completion-private-snippets-directory       nil
+                              auto-completion-enable-snippets-in-popup         t
+                              auto-completion-enable-sort-by-usage             t
+                              ))
 
   (setq custom-layers (list
                        auto-completion-mod
                        spell-checking-mod
                        ))
+
   (setq standard-layers '(
                           better-defaults
                           c-c++
+                          chinese
                           clojure
                           colors
                           common-lisp
                           csharp
+                          dash
                           django
                           dockerfile
                           elixir
@@ -410,7 +420,11 @@ you should place you code here."
                           lua
                           markdown
                           org
+                          ;; org-plus-contrib
+                          pandoc
                           python
+                          ranger
+                          restclient
                           ruby
                           rust
                           scala
@@ -422,11 +436,13 @@ you should place you code here."
                           sql
                           syntax-checking
                           themes-megapack
+                          vagrant
                           version-control
                           vimscript
                           windows-scripts
                           xkcd
                           yaml
+                          ycmd
                           ))
 
   (setq my-layer-list  (append standard-layers custom-layers))
@@ -434,3 +450,23 @@ you should place you code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3038a172e5b633d0b1ee284e6520a73035d0cb52f28b1708e22b394577ad2df1" "40bc0ac47a9bd5b8db7304f8ef628d71e2798135935eb450483db0dbbfff8b11" "603a9c7f3ca3253cb68584cb26c408afcf4e674d7db86badcfe649dd3c538656" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "f04122bbc305a202967fa1838e20ff741455307c2ae80a26035fbf5d637e325f" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(org-level-1 ((t (:inherit org-default :height 1.0))))
+ '(org-level-2 ((t (:inherit org-default :height 1.0))))
+ '(org-level-3 ((t (:inherit org-default :height 1.0))))
+ '(org-level-4 ((t (:inherit org-default :height 1.0))))
+ '(org-level-5 ((t (:inherit org-default :height 1.0)))))
