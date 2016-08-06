@@ -234,9 +234,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; stops spacemacs hanging on startup, caused by tramp
   (setq tramp-ssh-controlmaster-options
-        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
-
-  )
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
