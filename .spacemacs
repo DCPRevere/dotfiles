@@ -385,7 +385,6 @@ you should place you code here."
                           gnus
                           go
                           gtags
-                          gtags
                           haskell
                           html
                           java
