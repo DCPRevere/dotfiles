@@ -90,8 +90,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Hack"
-                               :size 25
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 27
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -319,10 +319,9 @@ you should place you code here."
           ))
   ;; org todo keywords
   (setq org-todo-keywords '((sequence
-                             "BACKLOG"
-                             "LISTED"
-                             "DEPENDENCY"
-                             "PROGRESS"
+                             "TODO"
+                             "INDEV"
+                             "TEST"
                              "|"
                              "DONE"
                              )))
@@ -373,22 +372,24 @@ you should place you code here."
   (setq standard-layers '(
                           better-defaults
                           c-c++
+                          clojure
                           colors
+                          common-lisp
                           csharp
                           django
                           dockerfile
-                          selectric
-                          xkcd
+                          emacs-lisp
                           emoji
                           games
-                          emacs-lisp
                           git
+                          gtags
                           html
                           java
                           markdown
                           org
                           python
                           ruby
+                          selectric
                           shell
                           shell-scripts
                           sql
@@ -396,6 +397,7 @@ you should place you code here."
                           version-control
                           vimscript
                           windows-scripts
+                          xkcd
                           yaml
                           ))
 
