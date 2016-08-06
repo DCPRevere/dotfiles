@@ -343,22 +343,26 @@ you should place you code here."
   )
 
 (defun layers-dacopare ()
-  (setq spell-checking-mod '(spell-checking :variables
-                                            spell-checking-enable-by-default nil))
-  (setq auto-completion-mod '(auto-completion :variables
-                                              auto-completion-return-key-behavior              nil
-                                              auto-completion-tab-key-behavior                 'complete
-                                              auto-completion-complete-with-key-sequence       "jk"
-                                              auto-completion-complete-with-key-sequence-delay 0.1
-                                              auto-completion-private-snippets-directory       nil
-                                              auto-completion-enable-snippets-in-popup         t
-                                              auto-completion-enable-sort-by-usage             t
-                                              ))
+
+  (setq spell-checking-mod '(spell-checking
+                             :variables spell-checking-enable-by-default nil))
+
+  (setq auto-completion-mod '(auto-completion
+                              :variables
+                              auto-completion-return-key-behavior              nil
+                              auto-completion-tab-key-behavior                 'complete
+                              auto-completion-complete-with-key-sequence       "jk"
+                              auto-completion-complete-with-key-sequence-delay 0.1
+                              auto-completion-private-snippets-directory       nil
+                              auto-completion-enable-snippets-in-popup         t
+                              auto-completion-enable-sort-by-usage             t
+                              ))
 
   (setq custom-layers (list
                        auto-completion-mod
                        spell-checking-mod
                        ))
+
   (setq standard-layers '(
                           better-defaults
                           c-c++
