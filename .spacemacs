@@ -336,10 +336,6 @@ you should place you code here."
    '(org-level-4 ((t (:inherit org-default :height 1.0))))
    '(org-level-5 ((t (:inherit org-default :height 1.0))))
    )
-  ;; ;; change the display of asterisks in org
-  ;; ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
-  ;; (setq org-bullet-mode nil)
-  ;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode nil)))
 
   ;; enter evil-insert-state when capturing
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
