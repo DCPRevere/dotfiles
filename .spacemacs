@@ -249,12 +249,6 @@ you should place you code here."
   ;; set default theme
   (setq-default dotspacemacs-themes '(spacemacs-dark sanityinc-tomorrow-eighties))
 
-  ;; set default font
-  (setq dotspacemacs-default-font '("Hack"
-                              :size 19
-                              :weight normal
-                              :width normal
-                              :powerline-scale 1.1))
 
   ;; ;; custom keybindings
   ;; (global-set-key (kbd "C-h") 'evil-window-left)
