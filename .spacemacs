@@ -249,13 +249,6 @@ you should place you code here."
   ;; set default theme
   (setq-default dotspacemacs-themes '(spacemacs-dark sanityinc-tomorrow-eighties))
 
-
-  ;; ;; custom keybindings
-  ;; (global-set-key (kbd "C-h") 'evil-window-left)
-  ;; (global-set-key (kbd "C-j") 'evil-window-down)
-  ;; (global-set-key (kbd "C-k") 'evil-window-up)
-  ;; (global-set-key (kbd "C-l") 'evil-window-right)
-
   ;; spacemacs leader keys
   (spacemacs/set-leader-keys
     "oc" 'org-capture
