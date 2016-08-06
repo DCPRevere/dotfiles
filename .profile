@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -20,6 +22,10 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# go
+export GOPATH=$HOME/code/go
+export PATH=$PATH:/home/dare/bin:/usr/local/go/bin:/home/dare/code/go/bin
 
 # venv stuff
 export WORKON_HOME=$HOME/code/venvs
