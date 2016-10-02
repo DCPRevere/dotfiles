@@ -232,7 +232,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
   (setq comp-settings '(("phobos" .
-                         ((font-size . 27)))
+                         ((font-size . 29)))
                         ("deimos" .
                          ((font-size . 19)))))
 
@@ -246,7 +246,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (fetch-setting 'font-size))
 
   (setq
-   dotspacemacs-default-font `("Source Code Pro"
+   dotspacemacs-default-font `("Fira Code"
                                :size ,(fetch-font-size)
                                :weight normal
                                :width normal
@@ -300,7 +300,7 @@ you should place you code here."
 
   ;; use my org settings
   (org-dacopare)
-)
+  )
 
 (defun org-dacopare ()
   ;; dacopare's org settings
@@ -333,11 +333,13 @@ you should place you code here."
           ))
   ;; org todo keywords
   (setq org-todo-keywords '((sequence
-                             "TODO"
-                             "INDEV"
-                             "TEST"
+                             "TODO(t)"
+                             "NEXT(n)"
+                             "CURR(k)"
+                             "WAIT(w@)"
                              "|"
-                             "DONE"
+                             "DONE(d)"
+                             "CANCELLED(c@)"
                              )))
   ;; babel load languages
   (org-babel-do-load-languages
