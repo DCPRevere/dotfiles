@@ -96,11 +96,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 17
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+   ;; dotspacemacs-default-font '("Source Code Pro"
+   ;;                             :size 19
+   ;;                             :weight normal
+   ;;                             :width normal
+   ;;                             :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -264,10 +264,9 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
-  (setq clojure-enable-fancify-symbols t)
+  (setq powerline-default-separator 'nil)
 
-  ;; set default theme
-  (setq-default dotspacemacs-themes '(spacemacs-dark sanityinc-tomorrow-eighties))
+  (setq clojure-enable-fancify-symbols t)
 
   ;; spacemacs leader keys
   (spacemacs/set-leader-keys
@@ -281,9 +280,6 @@ you should place you code here."
     "ox" 'execute-extended-command
     "oy" 'hippie-expand
     )
-
-  ;; automatically enter insert mode when capturing
-  (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
   ;; move backups to .emacs-saves
   (setq backup-directory-alist '(("." . "~/.emacs-saves")))
@@ -348,14 +344,14 @@ you should place you code here."
      (python . t)
      (ditaa . t)
      ))
-  ;; enforce normal height for org head
-  (custom-set-faces
-   '(org-level-1 ((t (:inherit org-default :height 1.0))))
-   '(org-level-2 ((t (:inherit org-default :height 1.0))))
-   '(org-level-3 ((t (:inherit org-default :height 1.0))))
-   '(org-level-4 ((t (:inherit org-default :height 1.0))))
-   '(org-level-5 ((t (:inherit org-default :height 1.0))))
-   )
+  ;; ;; enforce normal height for org head
+  ;; (custom-set-faces
+  ;;  '(org-level-1 ((t (:inherit org-default :height 1.0))))
+  ;;  '(org-level-2 ((t (:inherit org-default :height 1.0))))
+  ;;  '(org-level-3 ((t (:inherit org-default :height 1.0))))
+  ;;  '(org-level-4 ((t (:inherit org-default :height 1.0))))
+  ;;  '(org-level-5 ((t (:inherit org-default :height 1.0))))
+  ;;  )
 
   ;; enter evil-insert-state when capturing
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
@@ -364,78 +360,92 @@ you should place you code here."
 
 (defun layers-dacopare ()
 
-  (setq spell-checking-mod '(spell-checking
-                             :variables spell-checking-enable-by-default nil))
+  (setq
+   spell-checking-mod
+   '(spell-checking
+     :variables spell-checking-enable-by-default nil))
 
-  (setq auto-completion-mod '(auto-completion
-                              :variables
-                              auto-completion-return-key-behavior              nil
-                              auto-completion-tab-key-behavior                 'complete
-                              auto-completion-complete-with-key-sequence       "jk"
-                              auto-completion-complete-with-key-sequence-delay 0.1
-                              auto-completion-private-snippets-directory       nil
-                              auto-completion-enable-snippets-in-popup         t
-                              auto-completion-enable-sort-by-usage             t
-                              ))
+  (setq
+   auto-completion-mod
+   '(auto-completion
+     :variables
+     auto-completion-return-key-behavior              nil
+     auto-completion-tab-key-behavior                 'complete
+     auto-completion-complete-with-key-sequence       "jk"
+     auto-completion-complete-with-key-sequence-delay 0.1
+     auto-completion-private-snippets-directory       nil
+     auto-completion-enable-snippets-in-popup         t
+     auto-completion-enable-sort-by-usage             t
+     ))
 
-  (setq custom-layers (list
-                       auto-completion-mod
-                       spell-checking-mod
-                       ))
+  (setq
+   org-mod
+   '(org
+     :variables
+     org-enable-reveal-js-support t))
 
-  (setq standard-layers '(
-                          better-defaults
-                          c-c++
-                          chinese
-                          clojure
-                          colors
-                          common-lisp
-                          csharp
-                          dash
-                          django
-                          dockerfile
-                          elixir
-                          emacs-lisp
-                          emoji
-                          erlang
-                          finance
-                          fsharp
-                          games
-                          git
-                          gnus
-                          go
-                          gtags
-                          haskell
-                          html
-                          java
-                          javascript
-                          latex
-                          lua
-                          markdown
-                          org
-                          pandoc
-                          python
-                          ranger
-                          restclient
-                          ruby
-                          rust
-                          scala
-                          scheme
-                          selectric
-                          shell
-                          shell-scripts
-                          spotify
-                          sql
-                          syntax-checking
-                          themes-megapack
-                          vagrant
-                          version-control
-                          vimscript
-                          windows-scripts
-                          xkcd
-                          yaml
-                          ycmd
-                          ))
+  (setq
+   custom-layers
+   (list
+    auto-completion-mod
+    spell-checking-mod
+    org-mod
+    ))
+
+  (setq
+   standard-layers
+   '(
+     better-defaults
+     c-c++
+     chinese
+     clojure
+     colors
+     common-lisp
+     csharp
+     dash
+     django
+     dockerfile
+     elixir
+     emacs-lisp
+     emoji
+     erlang
+     finance
+     fsharp
+     games
+     git
+     gnus
+     go
+     gtags
+     haskell
+     html
+     java
+     javascript
+     latex
+     lua
+     markdown
+     pandoc
+     python
+     ranger
+     restclient
+     ruby
+     rust
+     scala
+     scheme
+     selectric
+     shell
+     shell-scripts
+     spotify
+     sql
+     syntax-checking
+     themes-megapack
+     vagrant
+     version-control
+     vimscript
+     windows-scripts
+     xkcd
+     yaml
+     ycmd
+     ))
 
   (setq my-layer-list  (append standard-layers custom-layers))
   )
@@ -449,13 +459,15 @@ you should place you code here."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("96998f6f11ef9f551b427b8853d947a7857ea5a578c75aa9c4e7c73fe04d10b4" "5999e12c8070b9090a2a1bbcd02ec28906e150bb2cdce5ace4f965c76cf30476" "1fc1fdf975c8c8c3767c29787a063eee50cbceef903644a0771fa66568ee8777" "cdbd0a803de328a4986659d799659939d13ec01da1f482d838b68038c1bb35e8" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3038a172e5b633d0b1ee284e6520a73035d0cb52f28b1708e22b394577ad2df1" "40bc0ac47a9bd5b8db7304f8ef628d71e2798135935eb450483db0dbbfff8b11" "603a9c7f3ca3253cb68584cb26c408afcf4e674d7db86badcfe649dd3c538656" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "f04122bbc305a202967fa1838e20ff741455307c2ae80a26035fbf5d637e325f" default))))
+    ("51e228ffd6c4fff9b5168b31d5927c27734e82ec61f414970fc6bcce23bc140d" "cedd3b4295ac0a41ef48376e16b4745c25fa8e7b4f706173083f16d5792bb379" "96998f6f11ef9f551b427b8853d947a7857ea5a578c75aa9c4e7c73fe04d10b4" "5999e12c8070b9090a2a1bbcd02ec28906e150bb2cdce5ace4f965c76cf30476" "1fc1fdf975c8c8c3767c29787a063eee50cbceef903644a0771fa66568ee8777" "cdbd0a803de328a4986659d799659939d13ec01da1f482d838b68038c1bb35e8" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "3038a172e5b633d0b1ee284e6520a73035d0cb52f28b1708e22b394577ad2df1" "40bc0ac47a9bd5b8db7304f8ef628d71e2798135935eb450483db0dbbfff8b11" "603a9c7f3ca3253cb68584cb26c408afcf4e674d7db86badcfe649dd3c538656" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "f04122bbc305a202967fa1838e20ff741455307c2ae80a26035fbf5d637e325f" default)))
+ '(pyim-dicts
+   (quote
+    ((:name "BigDict-01" :file "/home/dare/.emacs.d/.cache/pyim-bigdict.pyim.gz" :coding utf-8-unix :dict-type pinyin-dict)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(default ((t (:foreground "#eee" :background "#011827")) (((class color) (min-colors 256)) (:foreground "#eee" :background "black"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
  '(org-level-1 ((t (:inherit org-default :height 1.0))))
