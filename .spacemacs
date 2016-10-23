@@ -170,7 +170,7 @@ you should place your code here."
   (require 'org-drill)
 
   ;; org file locations
-  (setq org-agenda-files '("~/org"))
+  (setq org-agenda-files '("~/org" "~/org/private"))
   (setq org-default-notes-file (concat "~/org/refile.org"))
   (setq org-archive-location "~/org/archive/%s_archive::")
 
