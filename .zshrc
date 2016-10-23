@@ -128,6 +128,13 @@ alias gstat="git status"
 alias gpull="git pull origin master"
 alias gpush="git push origin master"
 
+# Hub replicates all git functionality
+# plus more
+alias git="hub"
+
+# Remove apt-get alias so I can use silver searcher.
+unalias ag
+
 export EDITOR="/usr/bin/vim"
 
 source ~/.zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
