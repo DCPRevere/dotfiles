@@ -1,5 +1,27 @@
 ;; -*- mode: emacs-lisp -*-
 
+(setq comp-settings '(("phobos" .
+                       ((font-size . 25)))
+                      ("deimos" .
+                       ((font-size . 19)))))
+
+;; TODO: this needs to change to manage the case where the key doesn't exist
+;; in the map.
+(defun fetch-setting (setting)
+  (cdr (assoc setting
+              (cdr (assoc system-name comp-settings)))))
+
+(defun fetch-font-size ()
+  (fetch-setting 'font-size))
+
+;; (setq
+;;  dotspacemacs-default-font `("Source Code Pro"
+;;                              :size ,(fetch-font-size)
+;;                              :weight normal
+;;                              :width normal
+;;                              :powerline-scale 1.1))
+
+
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -81,8 +103,9 @@ values."
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Fira mono"
-                               :size 17
+   dotspacemacs-default-font `("Fira mono"
+                               ;; :size 17
+                               :size ,(fetch-setting 'font-size)
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
