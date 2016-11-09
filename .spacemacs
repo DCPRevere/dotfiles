@@ -231,10 +231,14 @@ you should place your code here."
           ))
 
   ;; Tags
-  (setq org-tag-alist '(("home" . ?h)
-                        ("long" . ?l)
+  (setq org-tag-alist '(
                         ("drill" . ?d)
-                        ("work" . ?w)))
+                        ("home" . ?h)
+                        ("long" . ?l)
+                        ("phone" . ?p)
+                        ("self" . ?s)
+                        ("work" . ?w)
+                        ))
 
   ;; Insert mode hooks
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
