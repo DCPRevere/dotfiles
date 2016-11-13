@@ -31,52 +31,55 @@ values."
    dotspacemacs-enable-lazy-installation 'unused
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
-   dotspacemacs-configuration-layers '(
-                                       (auto-completion :variables
-                                                        auto-completion-return-key-behavior              nil
-                                                        auto-completion-tab-key-behavior                 'complete
-                                                        auto-completion-complete-with-key-sequence       "jk"
-                                                        auto-completion-complete-with-key-sequence-delay 0.1
-                                                        auto-completion-private-snippets-directory       nil
-                                                        auto-completion-enable-snippets-in-popup         t
-                                                        auto-completion-enable-sort-by-usage             t)
-                                       (chinese :variables
-                                                chinese-enable-youdao-dict t)
-                                       clojure
-                                       csharp
-                                       docker
-                                       emacs-lisp
-                                       emoji
-                                       git
-                                       go
-                                       gtags
-                                       helm
-                                       html
-                                       java
-                                       javascript
-                                       latex
-                                       markdown
-                                       (org :variables
-                                            org-enable-reveal-js-support t)
-                                       pandoc
-                                       python
-                                       ruby
-                                       scala
-                                       shell
-                                       shell-scripts
-                                       (spell-checking :variables
-                                                       spell-checking-enable-by-default nil)
-                                       sql
-                                       syntax-checking
-                                       themes-megapack
-                                       vagrant
-                                       version-control
-                                       vimscript
-                                       windows-scripts
-                                       xkcd
-                                       yaml
-                                       ycmd
-                                       )
+   dotspacemacs-configuration-layers
+   '((auto-completion
+      :variables
+      auto-completion-return-key-behavior              nil
+      auto-completion-tab-key-behavior                 'complete
+      auto-completion-complete-with-key-sequence       "jk"
+      auto-completion-complete-with-key-sequence-delay 0.1
+      auto-completion-private-snippets-directory       nil
+      auto-completion-enable-snippets-in-popup         t
+      auto-completion-enable-sort-by-usage             t)
+     (chinese
+      :variables
+      chinese-enable-youdao-dict t)
+     clojure
+     csharp
+     docker
+     emacs-lisp
+     emoji
+     git
+     go
+     gtags
+     helm
+     html
+     java
+     javascript
+     latex
+     markdown
+     (org
+      :variables
+      org-enable-reveal-js-support t)
+     pandoc
+     python
+     ruby
+     scala
+     shell
+     shell-scripts
+     (spell-checking
+      :variables
+      spell-checking-enable-by-default nil)
+     sql
+     syntax-checking
+     themes-megapack
+     vagrant
+     version-control
+     vimscript
+     windows-scripts
+     xkcd
+     yaml
+     ycmd)
    dotspacemacs-additional-packages '(org-plus-contrib)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(org-bullets)
@@ -100,7 +103,8 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(zenburn
+   dotspacemacs-themes '(spacegray
+                         zenburn
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -151,8 +155,7 @@ values."
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
-   dotspacemacs-whitespace-cleanup nil
-   ))
+   dotspacemacs-whitespace-cleanup nil))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -162,7 +165,9 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq tramp-ssh-controlmaster-options
-        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
+        (concat "-o ControlMaster=auto"
+                "-o ControlPath='tramp.%%C'"
+                "-o ControlPersist=no")))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -191,9 +196,10 @@ you should place your code here."
 
   ;; Create leader for org-capture
   (spacemacs/set-leader-keys
-    "oo" (lambda () (interactive) (find-file org-default-notes-file))
     "oc" 'org-capture
-    "oi" 'toggle-input-method)
+    "oi" 'toggle-input-method
+    "oo" (lambda () (interactive)
+           (find-file org-default-notes-file)))
 
   ;; Move backups to .emacs-saves/
   (setq backup-directory-alist '(("." . "~/.emacs-saves")))
@@ -217,11 +223,13 @@ you should place your code here."
 
   ;; Refiling
   (setq org-refile-use-outline-path 'file)
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 1)))
+  (setq org-refile-targets
+        '((org-agenda-files :maxlevel . 1)))
 
   ;; State keywords
   (setq org-todo-keywords
         '((sequence
+           "REFILE(r)"
            "TODO(t)"
            "NEXT(n)"
            "CURR(k)"
@@ -231,7 +239,9 @@ you should place your code here."
            "CANCELLED(c@)"
            )))
   (setq org-todo-keyword-faces
-        '(("TODO" . "maroon4")
+        '(
+          ("REFILE" . "aquamarine")
+          ("TODO" . "maroon4")
           ("NEXT" . "maroon3")
           ("CURR" . "maroon2")
           ("WAIT" . "maroon1")
@@ -241,10 +251,29 @@ you should place your code here."
           ))
 
   ;; Tags
-  (setq org-tag-alist '(("home" . ?h)
-                        ("long" . ?l)
+  (setq org-tag-alist '(
                         ("drill" . ?d)
-                        ("work" . ?w)))
+                        ("home" . ?h)
+                        ("long" . ?l)
+                        ("phone" . ?p)
+                        ("self" . ?s)
+                        ("work" . ?w)
+                        ))
+
+  (setq org-capture-templates
+        '(("c"
+           "Refile"
+           entry
+           (file org-default-notes-file)
+           "* REFILE %?")))
+
+  ;; Enforce uniform font size in org mode.
+  (custom-set-faces
+   '(org-level-1 ((t (:inherit org-default :height 1.0))))
+   '(org-level-2 ((t (:inherit org-default :height 1.0))))
+   '(org-level-3 ((t (:inherit org-default :height 1.0))))
+   '(org-level-4 ((t (:inherit org-default :height 1.0))))
+   '(org-level-5 ((t (:inherit org-default :height 1.0)))))
 
   ;; Insert mode hooks
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
@@ -252,8 +281,7 @@ you should place your code here."
 
   ;; Appearance
   ;; bullets have been disabled elsewhere.
-  (setq org-startup-indented t)
-  )
+  (setq org-startup-indented t))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -264,10 +292,17 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(pyim-dicts
    (quote
-    ((:name "BigDict-01" :file "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz" :coding utf-8-unix :dict-type pinyin-dict)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+    ((:name "BigDict-01"
+            :file "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz"
+            :coding utf-8-unix
+            :dict-type pinyin-dict))))
+
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476"
+     "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328"
+     "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7"
+     "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2"
+     default)))
+
+ '(evil-want-Y-yank-to-eol nil))
