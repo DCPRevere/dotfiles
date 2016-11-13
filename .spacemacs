@@ -40,7 +40,8 @@ values."
                                                         auto-completion-private-snippets-directory       nil
                                                         auto-completion-enable-snippets-in-popup         t
                                                         auto-completion-enable-sort-by-usage             t)
-                                       chinese
+                                       (chinese :variables
+                                                chinese-enable-youdao-dict t)
                                        clojure
                                        csharp
                                        docker
@@ -171,6 +172,13 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Set pyim directory
+  (setq pyim-directory "~/.emacs.d/.cache/pyim/")
+  (setq pyim-cache-directory (concat pyim-directory "cache/"))
+  (setq pyim-dicts-directory (concat pyim-directory "dicts/"))
+  (setq pyim-property-file (concat pyim-directory "pyim-words-property.txt"))
+
+
   ;; Load org-drill-table
   (load-file "~/.dotfiles/org/org-drill-table.el")
 
@@ -183,7 +191,9 @@ you should place your code here."
 
   ;; Create leader for org-capture
   (spacemacs/set-leader-keys
-    "oc" 'org-capture)
+    "oo" (lambda () (interactive) (find-file org-default-notes-file))
+    "oc" 'org-capture
+    "oi" 'toggle-input-method)
 
   ;; Move backups to .emacs-saves/
   (setq backup-directory-alist '(("." . "~/.emacs-saves")))
@@ -247,3 +257,17 @@ you should place your code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(pyim-dicts
+   (quote
+    ((:name "BigDict-01" :file "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz" :coding utf-8-unix :dict-type pinyin-dict)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
