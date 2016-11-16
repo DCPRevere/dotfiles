@@ -32,8 +32,7 @@ values."
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
-   '(
-     (auto-completion
+   '((auto-completion
       :variables
       auto-completion-return-key-behavior              nil
       auto-completion-tab-key-behavior                 'complete
@@ -42,7 +41,9 @@ values."
       auto-completion-private-snippets-directory       nil
       auto-completion-enable-snippets-in-popup         t
       auto-completion-enable-sort-by-usage             t)
-     chinese
+     (chinese
+      :variables
+      chinese-enable-youdao-dict t)
      clojure
      csharp
      docker
@@ -78,8 +79,7 @@ values."
      windows-scripts
      xkcd
      yaml
-     ycmd
-     )
+     ycmd)
    dotspacemacs-additional-packages '(org-plus-contrib)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(org-bullets)
@@ -154,8 +154,7 @@ values."
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
-   dotspacemacs-whitespace-cleanup nil
-   ))
+   dotspacemacs-whitespace-cleanup nil))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -180,6 +179,12 @@ you should place your code here."
   ;; Change the powerline seperator
   (setq powerline-default-separator 'arrow)
 
+  ;; Set pyim directory
+  (setq pyim-directory "~/.emacs.d/.cache/pyim/")
+  (setq pyim-cache-directory (concat pyim-directory "cache/"))
+  (setq pyim-dicts-directory (concat pyim-directory "dicts/"))
+  (setq pyim-property-file (concat pyim-directory "pyim-words-property.txt"))
+
   ;; Load org-drill-table
   (load-file "~/.dotfiles/org/org-drill-table.el")
 
@@ -193,6 +198,7 @@ you should place your code here."
   ;; Create leader for org-capture
   (spacemacs/set-leader-keys
     "oc" 'org-capture
+    "oi" 'toggle-input-method
     "oo" (lambda () (interactive)
            (find-file org-default-notes-file)))
 
@@ -281,8 +287,7 @@ you should place your code here."
 
   ;; Appearance
   ;; bullets have been disabled elsewhere.
-  (setq org-startup-indented t)
-  )
+  (setq org-startup-indented t))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -291,17 +296,16 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(pyim-dicts
+   (quote
+    ((:name "BigDict-01"
+            :file "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz"
+            :coding utf-8-unix
+            :dict-type pinyin-dict))))
+
  '(custom-safe-themes
    (quote
     ("a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "0e219d63550634bc5b0c214aced55eb9528640377daf486e13fb18a32bf39856" "7db4f811c922b96af34ed003edb27f976e19cfaabfeab11a5c54e3e0c27ba149" "e64111716b1c8c82638796667c2c03466fde37e69cada5f6b640c16f1f4e97df" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "be4025b1954e4ac2a6d584ccfa7141334ddd78423399447b96b6fa582f206194" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" default)))
+
+>>>>>>> 9ae70c1f7be8895b4ec2ebe128a47139a4404e95
  '(evil-want-Y-yank-to-eol nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-level-1 ((t (:inherit org-default :height 1.0))))
- '(org-level-2 ((t (:inherit org-default :height 1.0))))
- '(org-level-3 ((t (:inherit org-default :height 1.0))))
- '(org-level-4 ((t (:inherit org-default :height 1.0))))
- '(org-level-5 ((t (:inherit org-default :height 1.0)))))
