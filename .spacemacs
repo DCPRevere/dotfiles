@@ -65,7 +65,7 @@ values."
      python
      ruby
      scala
-     shell
+     (shell :variables shell-default-term-shell "/usr/bin/zsh")
      shell-scripts
      (spell-checking
       :variables
@@ -103,8 +103,7 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(spacegray
-                         zenburn
+   dotspacemacs-themes '(zenburn
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -177,12 +176,14 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Change the powerline seperator
+  (setq powerline-default-separator 'arrow)
+
   ;; Set pyim directory
   (setq pyim-directory "~/.emacs.d/.cache/pyim/")
   (setq pyim-cache-directory (concat pyim-directory "cache/"))
   (setq pyim-dicts-directory (concat pyim-directory "dicts/"))
   (setq pyim-property-file (concat pyim-directory "pyim-words-property.txt"))
-
 
   ;; Load org-drill-table
   (load-file "~/.dotfiles/org/org-drill-table.el")
@@ -215,6 +216,11 @@ you should place your code here."
 
   ;; org plus contrib
   (require 'org-drill)
+  (require 'org-habit)
+
+  ;; (with-eval-after-load 'org
+  ;;   (add-to-list 'org-modules 'org-habit)
+  ;;   (add-to-list 'org-modules 'org-drill))
 
   ;; org file locations
   (setq org-agenda-files '("~/org" "~/org/private"))
@@ -229,8 +235,8 @@ you should place your code here."
   ;; State keywords
   (setq org-todo-keywords
         '((sequence
-           "REFILE(r)"
            "TODO(t)"
+           "REFILE(r)"
            "NEXT(n)"
            "CURR(k)"
            "WAIT(w@)"
@@ -288,17 +294,15 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(pyim-dicts
    (quote
-    ((:name "BigDict-01"
-            :file "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz"
-            :coding utf-8-unix
-            :dict-type pinyin-dict))))
-
+    ((:name
+      "BigDict-01"
+      :file
+      "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz"
+      :coding
+      utf-8-unix
+      :dict-type
+      pinyin-dict))))
  '(custom-safe-themes
    (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476"
-     "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328"
-     "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7"
-     "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2"
-     default)))
-
+    ("a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "0e219d63550634bc5b0c214aced55eb9528640377daf486e13fb18a32bf39856" "7db4f811c922b96af34ed003edb27f976e19cfaabfeab11a5c54e3e0c27ba149" "e64111716b1c8c82638796667c2c03466fde37e69cada5f6b640c16f1f4e97df" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "be4025b1954e4ac2a6d584ccfa7141334ddd78423399447b96b6fa582f206194" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" default)))
  '(evil-want-Y-yank-to-eol nil))
