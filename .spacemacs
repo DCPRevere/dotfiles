@@ -241,29 +241,25 @@ you should place your code here."
            "WAIT(w@)"
            "|"
            "DONE(d@)"
-           "CANCELLED(c@)"
-           )))
+           "CANCELLED(c@)")))
+
   (setq org-todo-keyword-faces
-        '(
-          ("REFILE" . "aquamarine")
+        '(("REFILE" . "aquamarine")
           ("TODO" . "maroon4")
           ("NEXT" . "maroon3")
           ("CURR" . "maroon2")
           ("WAIT" . "maroon1")
           "|"
           ("DONE" . "olive drab")
-          ("CANCELLED" . "dark cyan")
-          ))
+          ("CANCELLED" . "dark cyan")))
 
   ;; Tags
-  (setq org-tag-alist '(
-                        ("drill" . ?d)
+  (setq org-tag-alist '(("drill" . ?d)
                         ("home" . ?h)
                         ("long" . ?l)
                         ("phone" . ?p)
                         ("self" . ?s)
-                        ("work" . ?w)
-                        ))
+                        ("work" . ?w)))
 
   (setq org-capture-templates
         '(("c"
