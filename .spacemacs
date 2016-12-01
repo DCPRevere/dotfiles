@@ -3,7 +3,7 @@
 (setq comp-settings '(("phobos" .
                        ((font-size . 25)))
                       ("deimos" .
-                       ((font-size . 19)))))
+                       ((font-size . 15)))))
 
 ;; TODO: this needs to change to manage the case where the key doesn't exist
 ;; in the map.
@@ -103,8 +103,7 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(zenburn
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font `("Fira mono"
