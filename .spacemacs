@@ -277,6 +277,9 @@ you should place your code here."
    '(org-level-4 ((t (:inherit org-default :height 1.0))))
    '(org-level-5 ((t (:inherit org-default :height 1.0)))))
 
+  ;; Fit tags to screen.
+  (setq org-tags-column -60)
+
   ;; Insert mode hooks
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   (add-hook 'org-insert-heading-hook 'evil-insert-state)
