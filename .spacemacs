@@ -212,6 +212,12 @@ you should place your code here."
   (global-centered-cursor-mode t)
   (global-hl-line-mode t)
 
+  ;; Truncate lines by default
+  (spacemacs/toggle-truncate-lines-on)
+  ;; and navigate by visual lines
+  (add-hook 'text-mode-hook
+            'spacemacs/toggle-visual-line-navigation-on)
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;        ORG MODE        ;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
