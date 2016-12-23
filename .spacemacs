@@ -1,7 +1,7 @@
 ;; -*- mode: emacs-lisp -*-
 
 (setq comp-settings '(("phobos" .
-                       ((font-size . 25)))
+                       ((font-size . 21)))
                       ("deimos" .
                        ((font-size . 19)))))
 
@@ -44,6 +44,7 @@ values."
      (chinese
       :variables
       chinese-enable-youdao-dict t)
+     colors
      clojure
      csharp
      docker
@@ -62,10 +63,14 @@ values."
       :variables
       org-enable-reveal-js-support t)
      pandoc
+     pdf-tools
      python
      ruby
      scala
-     (shell :variables shell-default-term-shell "/usr/bin/zsh")
+     (shell
+      :variables
+      shell-default-shell 'ansi-term
+      shell-default-term-shell "/bin/zsh")
      shell-scripts
      (spell-checking
       :variables
@@ -103,7 +108,7 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(zenburn
+   dotspacemacs-themes '(sanityinc-solarized-dark
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -239,10 +244,10 @@ you should place your code here."
            "REFILE(r)"
            "NEXT(n)"
            "CURR(k)"
-           "WAIT(w@)"
+           "WAIT(w)"
            "|"
-           "DONE(d@)"
-           "CANCELLED(c@)")))
+           "DONE(d)"
+           "CANCELLED(c)")))
 
   (setq org-todo-keyword-faces
         '(("REFILE" . "aquamarine")
@@ -259,6 +264,7 @@ you should place your code here."
                         ("home" . ?h)
                         ("long" . ?l)
                         ("phone" . ?p)
+                        ("read" . ?r)
                         ("self" . ?s)
                         ("work" . ?w)))
 
