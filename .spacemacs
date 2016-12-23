@@ -44,6 +44,7 @@ values."
      (chinese
       :variables
       chinese-enable-youdao-dict t)
+     colors
      clojure
      csharp
      docker
@@ -61,6 +62,7 @@ values."
      (org
       :variables
       org-enable-reveal-js-support t)
+     octave
      pandoc
      python
      ruby
