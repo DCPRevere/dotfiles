@@ -3,7 +3,7 @@
 (setq comp-settings '(("phobos" .
                        ((font-size . 21)))
                       ("deimos" .
-                       ((font-size . 19)))))
+                       ((font-size . 15)))))
 
 ;; TODO: this needs to change to manage the case where the key doesn't exist
 ;; in the map.
@@ -62,6 +62,7 @@ values."
      (org
       :variables
       org-enable-reveal-js-support t)
+     octave
      pandoc
      pdf-tools
      python
@@ -108,7 +109,8 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(sanityinc-solarized-dark
+   dotspacemacs-themes '(solarized-dark
+                         sanityinc-solarized-dark
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -215,6 +217,12 @@ you should place your code here."
   (global-centered-cursor-mode t)
   (global-hl-line-mode t)
 
+  ;; Truncate lines by default
+  (spacemacs/toggle-truncate-lines-on)
+  ;; and navigate by visual lines
+  (add-hook 'text-mode-hook
+            'spacemacs/toggle-visual-line-navigation-on)
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;        ORG MODE        ;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -282,6 +290,9 @@ you should place your code here."
    '(org-level-3 ((t (:inherit org-default :height 1.0))))
    '(org-level-4 ((t (:inherit org-default :height 1.0))))
    '(org-level-5 ((t (:inherit org-default :height 1.0)))))
+
+  ;; Fit tags to screen.
+  (setq org-tags-column -60)
 
   ;; Insert mode hooks
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
