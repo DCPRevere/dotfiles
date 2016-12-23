@@ -239,10 +239,10 @@ you should place your code here."
            "REFILE(r)"
            "NEXT(n)"
            "CURR(k)"
-           "WAIT(w@)"
+           "WAIT(w)"
            "|"
-           "DONE(d@)"
-           "CANCELLED(c@)")))
+           "DONE(d)"
+           "CANCELLED(c)")))
 
   (setq org-todo-keyword-faces
         '(("REFILE" . "aquamarine")
