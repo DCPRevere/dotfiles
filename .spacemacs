@@ -66,6 +66,9 @@ values."
      pandoc
      pdf-tools
      python
+     (ranger
+      :variables
+      ranger-show-preview t)
      ruby
      scala
      (shell
