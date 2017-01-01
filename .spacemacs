@@ -240,7 +240,7 @@ you should place your code here."
 
   ;; org file locations
   (setq org-agenda-files '("~/org" "~/org/private"))
-  (setq org-default-notes-file (concat "~/org/refile.org"))
+  (setq org-default-notes-file (concat "~/org/capture.org"))
   (setq org-archive-location "~/org/archive/%s_archive::")
 
   ;; Refiling
