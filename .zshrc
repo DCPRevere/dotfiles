@@ -162,3 +162,6 @@ alias venv=virtualenv
 
 source ~/git/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="/home/dare/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
