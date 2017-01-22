@@ -3,7 +3,7 @@
 (setq comp-settings '(("phobos" .
                        ((font-size . 25)))
                       ("deimos" .
-                       ((font-size . 15)))))
+                       ((font-size . 13)))))
 
 ;; TODO: this needs to change to manage the case where the key doesn't exist
 ;; in the map.
@@ -58,7 +58,10 @@ values."
      java
      javascript
      latex
-     markdown
+     (markdown
+      :variables
+      markdown-live-preview-engine 'vmd
+      markdown-command "pandoc")
      (org
       :variables
       org-enable-reveal-js-support t)
@@ -105,7 +108,8 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(monokai
+                         solarized-dark
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -232,7 +236,7 @@ you should place your code here."
 
   ;; org file locations
   (setq org-agenda-files '("~/org" "~/org/private"))
-  (setq org-default-notes-file (concat "~/org/refile.org"))
+  (setq org-default-notes-file (concat "~/org/capture.org"))
   (setq org-archive-location "~/org/archive/%s_archive::")
 
   ;; Refiling
@@ -248,12 +252,14 @@ you should place your code here."
            "NEXT(n)"
            "CURR(k)"
            "WAIT(w)"
+           "SOMEDAY(s)"
            "|"
            "DONE(d)"
            "CANCELLED(c)")))
 
   (setq org-todo-keyword-faces
         '(("REFILE" . "aquamarine")
+          ("SOMEDAY" . "sea green")
           ("TODO" . "maroon4")
           ("NEXT" . "maroon3")
           ("CURR" . "maroon2")
@@ -264,6 +270,7 @@ you should place your code here."
 
   ;; Tags
   (setq org-tag-alist '(("drill" . ?d)
+                        ("anywhere" . ?a)
                         ("home" . ?h)
                         ("long" . ?l)
                         ("phone" . ?p)
@@ -286,7 +293,7 @@ you should place your code here."
    '(org-level-5 ((t (:inherit org-default :height 1.0)))))
 
   ;; Fit tags to screen.
-  (setq org-tags-column -60)
+  (setq org-tags-column 0)
 
   ;; Insert mode hooks
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
@@ -303,17 +310,20 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(pyim-dicts
-   (quote
-    ((:name
-      "BigDict-01"
-      :file
-      "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz"
-      :coding
-      utf-8-unix
-      :dict-type
-      pinyin-dict))))
  '(custom-safe-themes
    (quote
-    ("a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "0e219d63550634bc5b0c214aced55eb9528640377daf486e13fb18a32bf39856" "7db4f811c922b96af34ed003edb27f976e19cfaabfeab11a5c54e3e0c27ba149" "e64111716b1c8c82638796667c2c03466fde37e69cada5f6b640c16f1f4e97df" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "be4025b1954e4ac2a6d584ccfa7141334ddd78423399447b96b6fa582f206194" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" default)))
- '(evil-want-Y-yank-to-eol nil))
+    ("c7a9a68bd07e38620a5508fef62ec079d274475c8f92d75ed0c33c45fbe306bc" "889a93331bc657c0f05a04b8665b78b3c94a12ca76771342cee27d6605abcd0e" "23ccf46b0d05ae80ee0661b91a083427a6c61e7a260227d37e36833d862ccffc" "c39ae5721fce3a07a27a685c08e4b856a13780dbc755a569bb4393c932f226d7" "fa1f7bdb40327d08bd35a0f5d5d8f13d2a863a8f37c45b96d2439861e944490a" "63dd8ce36f352b92dbf4f80e912ac68216c1d7cf6ae98195e287fd7c7f7cb189" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" "3cd28471e80be3bd2657ca3f03fbb2884ab669662271794360866ab60b6cb6e6" "e9776d12e4ccb722a2a732c6e80423331bcb93f02e089ba2a4b02e85de1cf00e" "5e2dc1360a92bb73dafa11c46ba0f30fa5f49df887a8ede4e3533c3ab6270e08" "de5261b9a087280fa6e931a5090703e52d04b545be4c2d95340840cd6f763f6a" "19ba41b6dc0b5dd34e1b8628ad7ae47deb19f968fe8c31853d64ea8c4df252b8" "4d0ef970adb1f147ca9aeda343f910e9ea9bac82c881abc89b3ab1998eceb12a" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "0e219d63550634bc5b0c214aced55eb9528640377daf486e13fb18a32bf39856" "7db4f811c922b96af34ed003edb27f976e19cfaabfeab11a5c54e3e0c27ba149" "e64111716b1c8c82638796667c2c03466fde37e69cada5f6b640c16f1f4e97df" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "be4025b1954e4ac2a6d584ccfa7141334ddd78423399447b96b6fa582f206194" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7" "d8f76414f8f2dcb045a37eb155bfaa2e1d17b6573ed43fb1d18b936febc7bbc2" default)))
+ '(evil-want-Y-yank-to-eol nil)
+ '(pyim-dicts
+   (quote
+    ((:name "BigDict-01" :file "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz" :coding utf-8-unix :dict-type pinyin-dict)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-level-1 ((t (:inherit org-default :height 1.0))))
+ '(org-level-2 ((t (:inherit org-default :height 1.0))))
+ '(org-level-3 ((t (:inherit org-default :height 1.0))))
+ '(org-level-4 ((t (:inherit org-default :height 1.0))))
+ '(org-level-5 ((t (:inherit org-default :height 1.0)))))
