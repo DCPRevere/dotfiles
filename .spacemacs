@@ -257,12 +257,14 @@ you should place your code here."
            "NEXT(n)"
            "CURR(k)"
            "WAIT(w)"
+           "SOMEDAY(s)"
            "|"
            "DONE(d)"
            "CANCELLED(c)")))
 
   (setq org-todo-keyword-faces
         '(("REFILE" . "aquamarine")
+          ("SOMEDAY" . "sea green")
           ("TODO" . "maroon4")
           ("NEXT" . "maroon3")
           ("CURR" . "maroon2")
