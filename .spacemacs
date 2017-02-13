@@ -112,7 +112,8 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(monokai
+                         solarized-dark
                          sanityinc-solarized-dark
                          spacemacs-dark
                          spacemacs-light)
