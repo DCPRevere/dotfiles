@@ -92,7 +92,8 @@ values."
      xkcd
      yaml
      ycmd)
-   dotspacemacs-additional-packages '(org-plus-contrib)
+   dotspacemacs-additional-packages '(org-plus-contrib
+                                      autothemer)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(org-bullets)
    dotspacemacs-install-packages 'used-only))
@@ -115,7 +116,8 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(monokai
+   dotspacemacs-themes '(darktooth
+                         monokai
                          solarized-dark
                          spacemacs-dark
                          spacemacs-light)
