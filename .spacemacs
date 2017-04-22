@@ -287,14 +287,6 @@ you should place your code here."
            (file org-default-notes-file)
            "* REFILE %?")))
 
-  ;; Enforce uniform font size in org mode.
-  (custom-set-faces
-   '(org-level-1 ((t (:inherit org-default :height 1.0))))
-   '(org-level-2 ((t (:inherit org-default :height 1.0))))
-   '(org-level-3 ((t (:inherit org-default :height 1.0))))
-   '(org-level-4 ((t (:inherit org-default :height 1.0))))
-   '(org-level-5 ((t (:inherit org-default :height 1.0)))))
-
   ;; Fit tags to screen.
   (setq org-tags-column 0)
 
@@ -320,13 +312,3 @@ you should place your code here."
  '(pyim-dicts
    (quote
     ((:name "BigDict-01" :file "/home/dare/.emacs.d/.cache/pyim/dicts/pyim-bigdict.pyim.gz" :coding utf-8-unix :dict-type pinyin-dict)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-level-1 ((t (:inherit org-default :height 1.0))))
- '(org-level-2 ((t (:inherit org-default :height 1.0))))
- '(org-level-3 ((t (:inherit org-default :height 1.0))))
- '(org-level-4 ((t (:inherit org-default :height 1.0))))
- '(org-level-5 ((t (:inherit org-default :height 1.0)))))
