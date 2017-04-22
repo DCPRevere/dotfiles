@@ -53,6 +53,7 @@ values."
      git
      go
      gtags
+     haskell
      helm
      html
      java
