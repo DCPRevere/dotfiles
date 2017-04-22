@@ -50,6 +50,7 @@ values."
      docker
      emacs-lisp
      emoji
+     finance
      git
      go
      gtags
@@ -108,7 +109,8 @@ values."
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(darktooth
+   dotspacemacs-themes '(sanityinc-tomorrow-eighties
+                         darktooth
                          monokai
                          solarized-dark
                          spacemacs-dark
