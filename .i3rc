@@ -154,32 +154,6 @@ focus_follows_mouse no
 
 bindsym $mod+q exec "$HOME/.i3/lock.sh $HOME/.i3/lock-gray.png"
 
-# #542437
-# #547980
-# #3B8686
-# #0B486B
-# #53777A
-# #C02942
-# #542437
-# #413E4A
-# #73626E
-# #B38184
-# #F0B49E
-# #F7E4BE
-# 
-# #2d2d2d Background
-# #393939 Current Line
-# #515151 Selection
-# #999999 Comment
-# #cccccc Foreground
-# #f2777a Red
-# #f99157 Orange
-# #ffcc66 Yellow
-# #99cc99 Green
-# #66cccc Aqua
-# #6699cc Blue
-# #cc99cc Purple
-
 #name                   #top    #border #text
 client.focused          #2d2d2d #999999 #2d2d2d #2d2d2d
 client.unfocused        #2d2d2d #2d2d2d #999999 #2d2d2d
@@ -206,6 +180,5 @@ bindsym $mod+m exec emacs
 
 exec redshift-gtk
 
-exec --no-startup-id i3-msg 'workspace 7; exec i3-sensible-terminal; workspace 1'
-exec --no-startup-id i3-msg 'workspace 8; exec emacs; workspace 1'
-exec --no-startup-id i3-msg 'workspace 9'
+exec --no-startup-id i3-msg 'workspace 7; exec i3-sensible-terminal '
+exec --no-startup-id i3-msg 'workspace 8; exec emacs; exec firefox'

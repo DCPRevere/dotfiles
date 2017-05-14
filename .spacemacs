@@ -1,7 +1,7 @@
 ;; -*- mode: emacs-lisp -*-
 
 (setq comp-settings '(("phobos" .
-                       ((font-size . 25)))
+                       ((font-size . 21)))
                       ("deimos" .
                        ((font-size . 13)))))
 
@@ -54,6 +54,7 @@ values."
      git
      go
      gtags
+     haskell
      helm
      html
      java
@@ -68,10 +69,17 @@ values."
       org-enable-reveal-js-support t)
      octave
      pandoc
+     pdf-tools
      python
+     (ranger
+      :variables
+      ranger-show-preview t)
      ruby
      scala
-     (shell :variables shell-default-term-shell "/usr/bin/zsh")
+     (shell
+      :variables
+      shell-default-shell 'ansi-term
+      shell-default-term-shell "/bin/zsh")
      shell-scripts
      (spell-checking
       :variables
@@ -86,7 +94,8 @@ values."
      xkcd
      yaml
      ycmd)
-   dotspacemacs-additional-packages '(org-plus-contrib)
+   dotspacemacs-additional-packages '(org-plus-contrib
+                                      autothemer)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(org-bullets)
    dotspacemacs-install-packages 'used-only))
@@ -277,6 +286,7 @@ you should place your code here."
                         ("home" . ?h)
                         ("long" . ?l)
                         ("phone" . ?p)
+                        ("read" . ?r)
                         ("self" . ?s)
                         ("work" . ?w)))
 
