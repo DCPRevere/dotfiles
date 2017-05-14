@@ -206,6 +206,5 @@ bindsym $mod+m exec emacs
 
 exec redshift-gtk
 
-exec --no-startup-id i3-msg 'workspace 7; exec i3-sensible-terminal; workspace 1'
-exec --no-startup-id i3-msg 'workspace 8; exec emacs; workspace 1'
-exec --no-startup-id i3-msg 'workspace 9'
+exec --no-startup-id i3-msg 'workspace 7; exec i3-sensible-terminal '
+exec --no-startup-id i3-msg 'workspace 8; exec emacs; exec firefox'
