@@ -208,7 +208,7 @@ you should place your code here."
 
   ;; Set browser to chrome
   (setq browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program "google-chrome")
+        browse-url-generic-program "firefox")
 
   ;; Use fancy symbols in Clojure
   (setq clojure-enable-fancify-symbols t)
