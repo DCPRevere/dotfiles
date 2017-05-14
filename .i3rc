@@ -201,7 +201,7 @@ bar {
     status_command i3status -c ~/.i3/i3status.conf
 }
 
-bindsym $mod+g exec google-chrome
+bindsym $mod+g exec firefox
 bindsym $mod+m exec emacs
 
 exec redshift-gtk
