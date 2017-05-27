@@ -3,7 +3,7 @@
 (setq comp-settings '(("phobos" .
                        ((font-size . 21)))
                       ("deimos" .
-                       ((font-size . 13)))))
+                       ((font-size . 12)))))
 
 ;; TODO: this needs to change to manage the case where the key doesn't exist
 ;; in the map.
