@@ -195,7 +195,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   ;; Change the powerline seperator
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator 'wave)
 
   ;; Set pyim directory
   (setq pyim-directory "~/.emacs.d/.cache/pyim/")
