@@ -1,0 +1,12 @@
+[user]
+	email = dcprevere@gmail.com
+	name = Daniel Revere
+[core]
+	autocrlf = input
+	editor = vim
+[push]
+	default = simple
+[alias]
+	lol = log --oneline --graph --decorate --all
+[credential]
+	helper = cache --timeout=43200
