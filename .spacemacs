@@ -3,7 +3,7 @@
 (setq comp-settings '(("phobos" .
                        ((font-size . 21)))
                       ("deimos" .
-                       ((font-size . 13)))))
+                       ((font-size . 12)))))
 
 ;; TODO: this needs to change to manage the case where the key doesn't exist
 ;; in the map.
@@ -195,7 +195,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   ;; Change the powerline seperator
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator 'wave)
 
   ;; Set pyim directory
   (setq pyim-directory "~/.emacs.d/.cache/pyim/")
@@ -208,7 +208,7 @@ you should place your code here."
 
   ;; Set browser to chrome
   (setq browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program "google-chrome")
+        browse-url-generic-program "firefox")
 
   ;; Use fancy symbols in Clojure
   (setq clojure-enable-fancify-symbols t)
