@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/dare/.oh-my-zsh
+# export ZSH=/home/dare/.oh-my-zsh
+export ZSH=$OH_MY_ZSH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -74,7 +75,6 @@ plugins=(
     ruby
     vagrant
     vi-mode
-    virtualenvwrapper
     web-search
 )
 
@@ -130,7 +130,7 @@ alias gpush="git push origin master"
 
 # Hub replicates all git functionality
 # plus more
-alias git="hub"
+# alias git="hub"
 
 # Remove apt-get alias so I can use silver searcher.
 unalias ag
@@ -138,6 +138,7 @@ unalias ag
 export EDITOR="/usr/bin/vim"
 
 source ~/.zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
@@ -159,9 +160,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 xset r rate 175 40
 alias venv=virtualenv
-
-source ~/git/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="/home/dare/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
