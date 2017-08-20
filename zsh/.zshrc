@@ -135,7 +135,7 @@ alias gpush="git push origin master"
 # Remove apt-get alias so I can use silver searcher.
 unalias ag
 
-export EDITOR="/usr/bin/vim"
+export EDITOR="vim"
 
 source ~/.zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
