@@ -163,3 +163,6 @@ alias venv=virtualenv
 
 export NVM_DIR="/home/dare/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Hack to correct for broken heroku
+source ~/heroku.zsh
