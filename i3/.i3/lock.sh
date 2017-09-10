@@ -1,4 +1,3 @@
-#!/bin/bash
 # github.com/savoca/dotfiles
 scrot /tmp/screen.png
 convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
