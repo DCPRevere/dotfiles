@@ -20,16 +20,16 @@ Plugin 'django.vim'
 Plugin 'Valloric/YouCompleteMe'
 
 " colors
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'ciaranm/inkpot'
-Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ciaranm/inkpot'
 
 call vundle#end()
 filetype plugin indent on
 
 " colours
-"colorscheme inkpot
-colorscheme jellybeans
+colorscheme inkpot
+" colorscheme jellybeans
+" colors jellybeans
 syntax on
 
 " general settings
