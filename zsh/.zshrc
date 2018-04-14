@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias sudo="sudo "
 
-export EDITOR="vim"
+export ALTERNATE_EDITOR=emacs EDITOR="emacsclient -c" VISUAL="emacsclient -c"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 set -o vi
