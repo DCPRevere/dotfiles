@@ -52,13 +52,12 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-export PATH=~/opt:$PATH
-
-set -o vi
-
 alias sudo="sudo "
 
 export EDITOR="vim"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+set -o vi
 
 source ~/.zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
