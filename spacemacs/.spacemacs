@@ -345,6 +345,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (setq elisp-path "/home/dare/git/elisp/")
+
   ;; Backups
   (setq backup-directory-alist '(("." . "~/.emacs-saves")))
   (setq backup-by-copying nil)
@@ -360,8 +362,9 @@ you should place your code here."
   (setq clojure-enable-fancify-symbols t)
 
   ;; Drools
-  ;; (add-to-list 'load-path "/home/dare/git/elisp/rules-editing-mode")
-  (load-file "/home/dare/git/elisp/rules-editing-mode/drools-mode.el")
+  (load-file
+   (concat elisp-path
+           "rules-editing-mode/drools-mode.el"))
   (add-to-list 'auto-mode-alist '("\\.drl$" . drools-mode))
 
   ;; Eclim
@@ -427,6 +430,11 @@ you should place your code here."
 
   ;; Powerline
   (setq powerline-default-separator 'nil)
+
+  ;; Protobuf
+  (load-file
+   (concat elisp-path "protobuf-mode.el"))
+  (add-to-list 'auto-mode-alist '("\\.proto$" . protobuf-mode))
 
   ;; Wrapping
   (spacemacs/toggle-truncate-lines-on) ;; disabled
