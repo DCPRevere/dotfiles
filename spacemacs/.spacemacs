@@ -369,12 +369,11 @@ you should place your code here."
 
   ;; Eclim
   (setq eclim-eclipse-dirs '("/usr/local/eclipse")
-        ;; eclim-executable "~/Downloads/eclipse/plugins/org.eclim_2.7.2/bin/eclim"
         eclimd-executable "/usr/local/eclipse/eclimd"
         eclimd-default-workspace "~/opt/workspace")
 
   ;; Fill column
-  (setq fill-column 60)
+  (setq fill-column 80)
   (turn-on-fci-mode)
 
   ;; Highlight line
@@ -382,12 +381,7 @@ you should place your code here."
 
   ;; Indentation
   (setq c-basic-offset 2)
-
-  ;; Leader
-  (spacemacs/set-leader-keys
-    "oc" 'org-capture
-    "oo" (lambda () (interactive)
-           (find-file org-default-notes-file)))
+  (setq js-indent-level 2)
 
   ;; Org
   (setq org-agenda-files
@@ -403,6 +397,11 @@ you should place your code here."
            entry
            (file org-default-notes-file)
            "* REFILE %?")))
+
+  (spacemacs/set-leader-keys
+    "oc" 'org-capture
+    "oo" (lambda () (interactive)
+           (find-file org-default-notes-file)))
 
   (setq org-todo-keywords
         '((sequence
@@ -438,8 +437,25 @@ you should place your code here."
 
   ;; Wrapping
   (spacemacs/toggle-truncate-lines-on) ;; disabled
+  (add-hook 'text-mode-hook
+            'spacemacs/toggle-visual-line-navigation-on)
 
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "5e2dc1360a92bb73dafa11c46ba0f30fa5f49df887a8ede4e3533c3ab6270e08" "0e0c37ee89f0213ce31205e9ae8bce1f93c9bcd81b1bcda0233061bb02c357a8" default)))
+ '(evil-want-Y-yank-to-eol nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
