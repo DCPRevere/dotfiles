@@ -173,6 +173,9 @@ bar {
 
 bindsym $mod+g exec --no-startup-id firefox
 bindsym $mod+m exec --no-startup-id emacs
+set $delay 150
+set $rate  50
+bindsym $mod+x exec --no-startup-id xset r rate $delay $rate
 
 exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
