@@ -159,7 +159,7 @@ bar {
   colors {
     background #1d1d1d
     separator  #515151
-    statusline #888888
+    statusline #aaaaaa
 
     focused_workspace  #515151 #2d2d2d #515151
     active_workspace   #393939 #2d2d2d #999999
@@ -172,7 +172,9 @@ bar {
 }
 
 bindsym $mod+g exec --no-startup-id firefox
-bindsym $mod+m exec --no-startup-id emacs
+bindsym $mod+n exec --no-startup-id emacs
+bindsym $mod+m exec --no-startup-id emacsclient -cn
+
 set $delay 150
 set $rate  50
 bindsym $mod+x exec --no-startup-id xset r rate $delay $rate
