@@ -1,6 +1,8 @@
 #!/bin/bash
 # github.com/savoca/dotfiles
 
+set -e
+
 PIC=~/tmp/screen.png
 
 scrot $PIC
