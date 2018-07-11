@@ -52,7 +52,10 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias sudo="sudo "
+LOCAL_ALIASES=~/.aliases.local.zsh
+if [[ -a $LOCAL_ALIASES ]]; then
+    source $LOCAL_ALIASES
+fi
 
 export ALTERNATE_EDITOR=emacs EDITOR="emacsclient -c" VISUAL="emacsclient -c"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
