@@ -61,7 +61,8 @@ fi
 
 # Use emacs as EDITOR
 export ALTERNATE_EDITOR=emacs EDITOR="emacsclient -c" VISUAL="emacsclient -c"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 # Use VIM keybindings
 set -o vi
