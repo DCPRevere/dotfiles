@@ -157,6 +157,9 @@ client.urgent           #2d2d2d #2d2d2d #999999 #2d2d2d
 
 new_window pixel
 
+gaps inner 10
+gaps outer 0
+
 bar {
   colors {
     background #1d1d1d
