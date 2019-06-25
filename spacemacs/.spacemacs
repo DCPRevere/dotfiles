@@ -4,6 +4,7 @@
 
 (setq settings
       '(("phobos" . ((font-size . 21)))
+        ("europa" . ((font-size . 20)))
         ("nixos" . ((font-size . 12)))
         ("deimos" . ((font-size . 12)))))
 
