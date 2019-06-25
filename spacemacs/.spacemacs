@@ -690,3 +690,4 @@ This function is called at the very end of Spacemacs initialization."
  '(org-level-3 ((t (:inherit org-default :height 1.0))))
  '(org-level-4 ((t (:inherit org-default :height 1.0))))
  '(org-level-5 ((t (:inherit org-default :height 1.0)))))
+)
