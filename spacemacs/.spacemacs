@@ -515,8 +515,9 @@ you should place your code here."
   ;; Centered mode
   (global-centered-cursor-mode t)
 
-  ;; Clojure
-  (setq clojure-enable-fancify-symbols t)
+  ;; ;; Clojure
+  ;; (setq clojure-enable-fancify-symbols t)
+  (evil-leader/set-key-for-mode 'clojure-mode "ea" 'cider-load-all-project-ns)
 
   ;; Drools
   (load-file
