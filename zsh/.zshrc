@@ -93,3 +93,6 @@ xset r rate 150 50
 
 # Remap CAPS --> ESC
 setxkbmap -option caps:escape
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
