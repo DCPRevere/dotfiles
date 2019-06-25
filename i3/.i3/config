@@ -184,6 +184,8 @@ bindsym $mod+x exec --no-startup-id xset r rate $delay $rate
 exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id nitrogen --set-zoom-fill ~/media/pictures/thai-mountain.jpg
 exec --no-startup-id i3-msg 'workspace 8; exec i3-sensible-terminal; exec emacs; exec firefox'
+
 workspace_layout stacking
