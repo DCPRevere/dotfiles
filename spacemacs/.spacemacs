@@ -592,7 +592,7 @@ you should place your code here."
 
   (setq org-todo-keywords
         '((sequence
-           "TODO(t)" "REFILE(r)" "SOMEDAY(s)"
+           "TODO(t)" "REFILE(r)" "SOMEDAY(s)" "WAIT(w)"
            "|"
            "DONE(d)" "CANCELLED(c)")))
 
