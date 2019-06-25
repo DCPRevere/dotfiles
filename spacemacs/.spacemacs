@@ -579,10 +579,10 @@ you should place your code here."
            (file ,org-default-notes-file)
            "* REFILE %?")
 
-          ("q" "Client"
-           entry
-           (file ,(concat org-client-dir "/capture.org"))
-           "* REFILE %?")
+          ;; ("q" "Client"
+          ;;  entry
+          ;;  (file ,(concat org-client-dir "/capture.org"))
+          ;;  "* REFILE %?")
           ))
 
   (spacemacs/set-leader-keys
