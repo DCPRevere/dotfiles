@@ -572,6 +572,9 @@ you should place your code here."
           ,org-client-dir
           ,org-blog-dir
           ,org-writing-dir))
+  (setq org-refile-targets
+        '((nil :maxlevel . 3)
+          (org-agenda-files :maxlevel . 3)))
   (setq org-default-notes-file (concat org-private-dir "/capture.org"))
   (setq org-archive-location (concat org-archive-dir "/%s_archive::"))
   (setq org-capture-templates
