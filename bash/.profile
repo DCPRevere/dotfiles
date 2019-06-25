@@ -9,6 +9,7 @@
 #umask 022
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export TERMINAL="/usr/bin/alacritty"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
