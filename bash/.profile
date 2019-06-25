@@ -23,12 +23,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-# go
-export GOPATH=$HOME/code/go
-export PATH=$PATH:/home/dare/bin:/usr/local/go/bin:/home/dare/code/go/bin:/usr/lib/postgresql/9.5/bin
-
-# venv stuff
-export WORKON_HOME=$HOME/code/venvs
-export PROJECT_HOME=$HOME/code
-source /usr/local/bin/virtualenvwrapper.sh
