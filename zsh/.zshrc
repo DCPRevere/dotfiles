@@ -53,17 +53,23 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# Local aliases are not source controlled
 LOCAL_ALIASES=~/.aliases.local.zsh
 if [[ -a $LOCAL_ALIASES ]]; then
     source $LOCAL_ALIASES
 fi
 
+# Use emacs as EDITOR
 export ALTERNATE_EDITOR=emacs EDITOR="emacsclient -c" VISUAL="emacsclient -c"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
+# Use VIM keybindings
 set -o vi
 
+# Syntax highlighting
 source ~/.zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# History substring search
 source ~/.zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 zmodload zsh/terminfo
@@ -76,6 +82,8 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+# Set key repeat delay and rate
 xset r rate 150 50
 
+# Remap CAPS --> ESC
 setxkbmap -option caps:escape
