@@ -40,19 +40,29 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(ansible
      (auto-completion :variables
                       auto-completion-return-key-behavior        nil
                       auto-completion-tab-key-behavior           'complete
                       auto-completion-enable-snippets-in-popup   t
                       auto-completion-enable-sort-by-usage       t)
      colors
-     clojure
+     (clojure :variables
+              clojure-enable-clj-refactor t
+              clojure-enable-fancify-symbols t
+              clojure-enable-sayid t)
      csharp
      csv
      dash
      docker
      emacs-lisp
+     ;; (geolocation :variables
+     ;;              geolocation-enable-location-service t
+     ;;              geolocation-enable-weather-forecast t
+     ;;              sunshine-appid "37cf26f7af26804ffa85ea10f479da71"
+     ;;              sunshine-location (getenv "LOCATION")
+     ;;              sunshine-units 'metric
+     ;;              sunshine-show-icons t)
      git
      gtags
      haskell
@@ -66,24 +76,28 @@ values."
      mu4e
      org
      pandoc
-     pdf-tools
-     python
+     pdf
+     (python :variables
+             python-enable-yapf-format-on-save t)
      (ranger :variables
              ranger-show-preview t
              ranger-show-hidden t
              ranger-width-preview 0.5)
      restclient
      ruby
+     scala
      (shell
       :variables
       shell-default-shell 'ansi-term
       shell-default-term-shell "/bin/zsh")
      shell-scripts
+     slack
      (spell-checking :variables
                      spell-checking-enable-by-default nil)
      sql
      syntax-checking
      themes-megapack
+     typescript
      version-control
      vimscript
      yaml
