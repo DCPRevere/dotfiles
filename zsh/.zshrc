@@ -53,6 +53,11 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+ALIASES=~/.aliases.zsh
+if [[ -a $ALIASES ]]; then
+    source $ALIASES
+fi
+
 # Local aliases are not source controlled
 LOCAL_ALIASES=~/.aliases.local.zsh
 if [[ -a $LOCAL_ALIASES ]]; then
