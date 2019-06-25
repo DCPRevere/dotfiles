@@ -626,7 +626,7 @@ you should place your code here."
 
   ;; Protobuf
   (load-file
-   (concat elisp-path "protobuf-mode.el"))
+   (concat elisp-path "protobuf/editors/protobuf-mode.el"))
   (add-to-list 'auto-mode-alist '("\\.proto$" . protobuf-mode))
 
   ;; Wrapping
