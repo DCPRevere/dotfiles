@@ -1,2 +1,2 @@
 #!/bin/bash
-pactl list short sinks | grep RUNNING | awk '{print $1}'
+pactl list short sinks | grep -E "(RUNNING|IDLE)" | awk '{print $1}'
