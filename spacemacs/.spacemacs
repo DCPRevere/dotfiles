@@ -179,9 +179,14 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(railscasts
-                         brin
+   dotspacemacs-themes '(
                          inkpot
+                         tao-yin
+                         sanityinc-solarized-dark
+                         doom-spacegrey
+                         gruvbox-dark-soft
+                         twilight-anti-bright
+                         brin
                          majapahit-dark
                          spacemacs-dark
                          spacemacs-light)
@@ -189,7 +194,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font `("Fira mono"
+   dotspacemacs-default-font `("Fira code"
                                :size ,(fetch-setting 'font-size)
                                :weight normal
                                :width normal
