@@ -531,8 +531,8 @@ you should place your code here."
         eclimd-default-workspace "~/opt/workspace")
 
   ;; Fill column
-  (setq fill-column 90)
-  (turn-on-fci-mode)
+  (setq fci-rule-column 80)
+  (add-hook 'python-mode-hook 'fci-mode)
 
   ;; Highlight line
   (global-hl-line-mode t)
