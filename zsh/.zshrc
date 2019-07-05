@@ -92,7 +92,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set key repeat delay and rate
-xset r rate 150 50
+KEY_DELAY=150
+KEY_RATE=50
+xset r rate $KEY_DELAY $KEY_RATE
 
 # Remap CAPS --> ESC
 setxkbmap -option caps:escape
