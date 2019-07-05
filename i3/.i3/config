@@ -204,7 +204,7 @@ bindsym $mod+m exec --no-startup-id emacsclient -cn
 set $delay 150
 set $rate  50
 bindsym $mod+x exec --no-startup-id xset r rate $delay $rate
-bindsym $mod+c exec --no-startup-id killall compton && compton -b
+bindsym $mod+c exec --no-startup-id killall compton ; compton -b
 bindsym $mod+Shift+x exec gnome-terminal -e xkill
 
 exec --no-startup-id compton -b
