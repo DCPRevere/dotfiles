@@ -88,11 +88,11 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Set key repeat delay and rate
 xset r rate 150 50
 
 # Remap CAPS --> ESC
 setxkbmap -option caps:escape
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
