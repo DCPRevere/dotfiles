@@ -198,8 +198,14 @@ bar {
 
 bindsym $mod+g exec --no-startup-id firefox
 bindsym $mod+b exec --no-startup-id firefox
+
+# emacs
+# -a EDITOR, --alternative-editor=EDITOR
+# Editor to fallback to if the server is not running
+# If EDITOR is the empty string, start Emacs in daemon
+# mode and try connecting again
 bindsym $mod+n exec --no-startup-id emacs
-bindsym $mod+m exec --no-startup-id emacsclient -cn
+bindsym $mod+m exec --no-startup-id emacsclient -a '' -cn
 
 set $delay 150
 set $rate  50
