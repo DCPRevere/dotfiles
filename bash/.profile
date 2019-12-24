@@ -16,7 +16,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+export GOPATH=$HOME/src/go
+
 export PATH=$(zsh ~/.path.zsh)
 
 export TERMINAL="/usr/bin/alacritty"
-
