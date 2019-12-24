@@ -559,6 +559,15 @@ you should place your code here."
               (setq c-basic-offset 2)
               (setq fill-column 100)))
 
+  ;; C++
+
+  ;; (load-file
+  ;;  (concat elisp-path "google-style/google-c-style.el"))
+  ;; (add-hook 'c-mode-common-hook 'google-set-c-style)
+
+  (setq c-default-style "k&r"
+        c-basic-offset 4)
+
   ;; Org
   (setq org-base-dir "~/org/")
 
