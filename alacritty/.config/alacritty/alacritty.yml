@@ -488,6 +488,12 @@ key_bindings:
   #- { key: Q,      mods: Command, action: Quit             }
   #- { key: W,      mods: Command, action: Quit             }
 
+  - { key: U, mods: Shift|Control, action: ScrollPageUp }
+  - { key: PageUp, action: ScrollPageUp }
+
+  - { key: D, mods: Shift|Control, action: ScrollPageDown }
+  - { key: PageDown, action: ScrollPageDown }
+
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: L,        mods: Control, action: ClearLogNotice                   }
@@ -502,12 +508,12 @@ key_bindings:
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~",     mode: Alt        }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                       }
   - { key: PageUp,   mods: Alt,     chars: "\x1b[5;3~"                       }
-  - { key: PageUp,                  chars: "\x1b[5~"                         }
+  # - { key: PageUp,                  chars: "\x1b[5~"                         }
   - { key: PageDown, mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~",     mode: Alt        }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                       }
   - { key: PageDown, mods: Alt,     chars: "\x1b[6;3~"                       }
-  - { key: PageDown,                chars: "\x1b[6~"                         }
+  # - { key: PageDown,                chars: "\x1b[6~"                         }
   - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                          }
   - { key: Back,                    chars: "\x7f"                            }
   - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                        }
