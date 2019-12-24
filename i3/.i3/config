@@ -9,7 +9,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:monospace 8
-font pango:Fira Code 8
+font pango:Fira Code 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -150,14 +150,7 @@ focus_follows_mouse no
 bindsym $mod+q exec --no-startup-id "$HOME/.i3/lock.sh $HOME/.i3/lock-gray.png"
 
 # Colours
-set $base03   #002b36
-set $base02   #073642
-set $base01   #586e75
-set $base00   #657b83
-set $base0    #839496
-set $base1    #93a1a1
-set $base2    #eee8d5
-set $base3    #fdf6e3
+
 set $yellow   #b58900
 set $orange   #cb4b16
 set $red      #dc322f
@@ -166,13 +159,24 @@ set $violet   #6c71c4
 set $blue     #268bd2
 set $cyan     #2aa198
 set $green    #859900
-set $custom   #1c5766
 
-# name                  #border #background #text   #indicator
-client.focused          $base03 $base01     $base03 $violet
-client.focused_inactive $base02 $base02     $base2  $violet
-client.unfocused        $base03 $base03     $base1  $base01
-client.urgent           $magenta $magenta   $base3  $red
+set $base000 #000011
+set $base001 #191928
+set $base002 #323240
+set $base003 #4c4c58
+set $base004 #666670
+set $base005 #7f7f88
+set $base006 #99999f
+set $base007 #b2b2b7
+set $base008 #cccccf
+set $base009 #e5e5e7
+set $base010 #ffffff
+
+# name                  #border     #bg         #text       #indicator
+client.focused          $base000    $base002    $base008    $violet
+client.focused_inactive $base001    $base001    $base008    $violet
+client.unfocused        $base000    $base000    $base009    $base002
+client.urgent           $red        $red        $base000    $red
 
 new_window pixel
 
@@ -183,14 +187,14 @@ bar {
   position top
 
   colors {
-    separator  $base02
-    background $base03
-    statusline $base1
+    separator  $base003
+    background $base000
+    statusline $base006
 
-    focused_workspace  $base01 $base02 $base0
-    active_workspace   $base03 $base03 $base01
-    inactive_workspace $base03 $base03 $base01
-    urgent_workspace   $magenta $magenta $base3
+    focused_workspace  $base010 $base000 $base010
+    active_workspace   $base002 $base002 $base008
+    inactive_workspace $base002 $base002 $base008
+    urgent_workspace   $magenta $magenta $base008
   }
   # i3status.conf defines some text colours
   status_command i3status -c ~/.i3/i3status.conf
