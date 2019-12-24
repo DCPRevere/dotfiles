@@ -46,6 +46,7 @@ values."
                       auto-completion-tab-key-behavior           'complete
                       auto-completion-enable-snippets-in-popup   t
                       auto-completion-enable-sort-by-usage       t)
+     (c-c++ :variables c-c++-enable-clang-support t)
      colors
      (clojure :variables
               clojure-enable-clj-refactor t
@@ -64,6 +65,7 @@ values."
      ;;              sunshine-units 'metric
      ;;              sunshine-show-icons t)
      git
+     go
      gtags
      haskell
      helm
@@ -85,11 +87,11 @@ values."
              ranger-width-preview 0.5)
      restclient
      ruby
+     rust
      scala
-     (shell
-      :variables
-      shell-default-shell 'ansi-term
-      shell-default-term-shell "/bin/zsh")
+     (shell :variables
+            shell-default-shell 'ansi-term
+            shell-default-term-shell "/bin/zsh")
      shell-scripts
      slack
      (spell-checking :variables
