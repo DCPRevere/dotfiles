@@ -219,12 +219,13 @@ bindsym $mod+Shift+x exec gnome-terminal -e xkill
 
 exec --no-startup-id compton -b
 
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk
 
 exec --no-startup-id unclutter
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id nitrogen --set-zoom-fill ~/media/pictures/wallpapers/
+exec --no-startup-id nitrogen --set-scaled --random ~/media/pictures/wallpapers/
 exec --no-startup-id i3-msg 'workspace 8; exec i3-sensible-terminal; exec emacs; exec firefox'
 
 workspace_layout stacking
