@@ -6,6 +6,7 @@ PATH_ELEMENTS=(
     "/usr/bin"
     "/sbin"
     "/bin"
+    "/snap/bin"
     "/usr/games"
     "/usr/local/games"
 
