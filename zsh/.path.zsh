@@ -10,10 +10,12 @@ PATH_ELEMENTS=(
     "/usr/games"
     "/usr/local/games"
 
+    "${GOPATH}/bin"
+    "${HOME}/.cargo/bin"
+    "${HOME}/.npm-packages"
+
     "${HOME}/bin"
     "${HOME}/scripts"
-
-    "${HOME}/.npm-packages"
 )
 
 PATH=$(echo $PATH_ELEMENTS | sed "s/ /:/g")

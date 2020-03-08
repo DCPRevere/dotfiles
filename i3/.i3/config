@@ -111,16 +111,27 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id change-volume.sh + 10
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id change-volume.sh + 1
+
 bindsym XF86AudioLowerVolume exec --no-startup-id change-volume.sh - 10
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id change-volume.sh - 1
+
 bindsym XF86AudioMute exec --no-startup-id mute.sh
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym $mod+u exec --no-startup-id xbacklight -inc 10
-bindsym $mod+p exec --no-startup-id xbacklight -inc 1
+bindsym Shift+XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
+bindsym Control+XF86MonBrightnessUp exec --no-startup-id xbacklight -set 100
+
+bindsym $mod+u exec --no-startup-id light -U 10
+bindsym $mod+i exec --no-startup-id light -U 1
+
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-bindsym $mod+i exec --no-startup-id xbacklight -dec 10
-bindsym $mod+o exec --no-startup-id xbacklight -dec 1
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
+bindsym Control+XF86MonBrightnessDown exec --no-startup-id xbacklight -set 1
+
+bindsym $mod+o exec --no-startup-id light -A 1
+bindsym $mod+p exec --no-startup-id light -A 10
 
 # resize window (you can also use the mouse for that)
 Bindsym $mod+r mode "resize"
@@ -227,7 +238,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id nitrogen --set-scaled --random ~/media/pictures/wallpapers/
+exec --no-startup-id nitrogen --set-zoom-fill --random ~/media/pictures/wallpapers/
 exec --no-startup-id i3-msg 'workspace 8; exec i3-sensible-terminal; exec emacs; exec firefox'
 
 workspace_layout stacking
