@@ -186,21 +186,22 @@ set $base009 #e5e5e7
 set $base010 #ffffff
 
 # name                  #border     #bg         #text       #indicator
-client.focused          $base000    $base002    $base008    $violet
+client.focused          $base010    $base008    $base000    $violet
 client.focused_inactive $base001    $base001    $base008    $violet
 client.unfocused        $base000    $base000    $base009    $base002
 client.urgent           $red        $red        $base000    $red
 
 new_window pixel
 
-gaps inner 30
+gaps inner 50
 gaps outer 0
 
 bar {
   position top
+  tray_output eDP
 
   colors {
-    separator  $base003
+    separator  $base008
     background $base000
     statusline $base006
 
@@ -230,10 +231,8 @@ bindsym $mod+x exec --no-startup-id xset r rate $delay $rate
 bindsym $mod+c exec --no-startup-id killall compton ; compton -b
 bindsym $mod+Shift+x exec gnome-terminal -e xkill
 
-exec --no-startup-id compton -b
-
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift-gtk -t 4000:4000
 
 exec --no-startup-id unclutter
 exec --no-startup-id nm-applet
