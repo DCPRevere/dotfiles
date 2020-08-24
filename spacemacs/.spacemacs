@@ -2,8 +2,10 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+(setq package-check-signature nil)
+
 (setq settings
-      '(("phobos" . ((font-size . 21)))
+      '(("phobos" . ((font-size . 28)))
         ("europa" . ((font-size . 24)))
         ("nixos" . ((font-size . 12)))
         ("deimos" . ((font-size . 12)))))
@@ -635,13 +637,6 @@ you should place your code here."
           ("DONE" . "olive drab")
           ("CANCELLED" . "dark cyan")))
 
-  ;; (custom-set-faces
-  ;;  '(org-level-1 ((t (:inherit org-default :height 1.0))))
-  ;;  '(org-level-2 ((t (:inherit org-default :height 1.0))))
-  ;;  '(org-level-3 ((t (:inherit org-default :height 1.0))))
-  ;;  '(org-level-4 ((t (:inherit org-default :height 1.0))))
-  ;;  '(org-level-5 ((t (:inherit org-default :height 1.0)))))
-
   (setq org-tags-column 0)
   (setq org-tag-alist '(("home" . ?h)
                         ("self" . ?s)
@@ -651,6 +646,10 @@ you should place your code here."
   (add-hook 'org-insert-heading-hook 'evil-insert-state)
 
   (setq org-startup-indented t)
+
+  ;; Readtime
+  (load-file
+   (concat elisp-path "read-time.el"))
 
   ;; Powerline
   (setq powerline-default-separator 'slant)
@@ -676,7 +675,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("62c81ae32320ceff5228edceeaa6895c029cc8f43c8c98a023f91b5b339d633f" "f27c3fcfb19bf38892bc6e72d0046af7a1ded81f54435f9d4d09b3bff9c52fc1" "a5956ec25b719bf325e847864e16578c61d8af3e8a3d95f60f9040d02497e408" "c1390663960169cd92f58aad44ba3253227d8f715c026438303c09b9fb66cdfb" "51e228ffd6c4fff9b5168b31d5927c27734e82ec61f414970fc6bcce23bc140d" "9deeab438d1d798c26d41c759d74a2406802427ff6acb7dec8cec961bcb4e7d5" "a25c42c5e2a6a7a3b0331cad124c83406a71bc7e099b60c31dc28a1ff84e8c04" "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7" "19ba41b6dc0b5dd34e1b8628ad7ae47deb19f968fe8c31853d64ea8c4df252b8" "cd4d1a0656fee24dc062b997f54d6f9b7da8f6dc8053ac858f15820f9a04a679" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "3a5f04a517096b08b08ef39db6d12bd55c04ed3d43b344cf8bd855bde6d3a1ae" "b825687675ea2644d1c017f246077cdd725d4326a1c11d84871308573d019f67" "d1aec5dbeb0267f20d73d4e670e94d007dba09d2193ee39df2023fe61b4fe765" "3b0a350918ee819dca209cec62d867678d7dac74f6195f5e3799aa206358a983" "3cd28471e80be3bd2657ca3f03fbb2884ab669662271794360866ab60b6cb6e6" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "5e2dc1360a92bb73dafa11c46ba0f30fa5f49df887a8ede4e3533c3ab6270e08" "0e0c37ee89f0213ce31205e9ae8bce1f93c9bcd81b1bcda0233061bb02c357a8" default)))
+    ("72085337718a3a9b4a7d8857079aa1144ea42d07a4a7696f86627e46ac52f50b" "62c81ae32320ceff5228edceeaa6895c029cc8f43c8c98a023f91b5b339d633f" "f27c3fcfb19bf38892bc6e72d0046af7a1ded81f54435f9d4d09b3bff9c52fc1" "a5956ec25b719bf325e847864e16578c61d8af3e8a3d95f60f9040d02497e408" "c1390663960169cd92f58aad44ba3253227d8f715c026438303c09b9fb66cdfb" "51e228ffd6c4fff9b5168b31d5927c27734e82ec61f414970fc6bcce23bc140d" "9deeab438d1d798c26d41c759d74a2406802427ff6acb7dec8cec961bcb4e7d5" "a25c42c5e2a6a7a3b0331cad124c83406a71bc7e099b60c31dc28a1ff84e8c04" "868f73b5cf78e72ca2402e1d48675e49cc9a9619c5544af7bf216515d22b58e7" "19ba41b6dc0b5dd34e1b8628ad7ae47deb19f968fe8c31853d64ea8c4df252b8" "cd4d1a0656fee24dc062b997f54d6f9b7da8f6dc8053ac858f15820f9a04a679" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "3a5f04a517096b08b08ef39db6d12bd55c04ed3d43b344cf8bd855bde6d3a1ae" "b825687675ea2644d1c017f246077cdd725d4326a1c11d84871308573d019f67" "d1aec5dbeb0267f20d73d4e670e94d007dba09d2193ee39df2023fe61b4fe765" "3b0a350918ee819dca209cec62d867678d7dac74f6195f5e3799aa206358a983" "3cd28471e80be3bd2657ca3f03fbb2884ab669662271794360866ab60b6cb6e6" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "5e2dc1360a92bb73dafa11c46ba0f30fa5f49df887a8ede4e3533c3ab6270e08" "0e0c37ee89f0213ce31205e9ae8bce1f93c9bcd81b1bcda0233061bb02c357a8" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
@@ -686,13 +685,8 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(default ((t (:background "#1e1e27" :foreground "#cfbfad"))))
- ;; '(org-level-1 ((t (:inherit org-default :height 1.0))))
- ;; '(org-level-2 ((t (:inherit org-default :height 1.0))))
- ;; '(org-level-3 ((t (:inherit org-default :height 1.0))))
- ;; '(org-level-4 ((t (:inherit org-default :height 1.0))))
- ;; '(org-level-5 ((t (:inherit org-default :height 1.0))))
  )
+>>>>>>> c164dc4e97a5a7dacaaf703e75ca57b7f01d1620
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
