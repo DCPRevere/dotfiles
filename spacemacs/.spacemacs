@@ -641,6 +641,7 @@ you should place your code here."
   (add-hook 'org-insert-heading-hook 'evil-insert-state)
 
   (setq org-startup-indented t)
+  (spacemacs|disable-company org-mode)
 
   ;; Readtime
   (load-file
