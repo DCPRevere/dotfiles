@@ -616,7 +616,11 @@ you should place your code here."
   (evil-leader/set-key-for-mode 'org-mode "k" 'org-metaup)
   (evil-leader/set-key-for-mode 'org-mode "l" 'org-metaright)
 
+  (defun use-default-paragraph-delimiters ()
+    (setq paragraph-start (default-value 'paragraph-start)
+          paragraph-separate (default-value 'paragraph-separate)))
 
+  (add-hook 'org-mode-hook 'use-default-paragraph-delimiters)
 
   (setq org-todo-keywords
         '((sequence
