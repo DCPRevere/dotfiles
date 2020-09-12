@@ -21,3 +21,8 @@ export GOPATH=$HOME/src/go
 export PATH=$(zsh ~/.path.zsh)
 
 export TERMINAL="/usr/bin/alacritty"
+
+# create i3 config file
+HN=$(hostname)
+DOT=$HOME/.dotfiles
+cat $DOT/i3/.i3/config.$HN > $DOT/i3/.i3/config
