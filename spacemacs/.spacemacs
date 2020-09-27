@@ -607,17 +607,6 @@ you should place your code here."
     "oo" (lambda () (interactive)
            (find-file org-default-notes-file)))
 
-  (evil-leader/set-key-for-mode 'org-mode "h" 'org-metaleft)
-  (evil-leader/set-key-for-mode 'org-mode "j" 'org-metadown)
-  (evil-leader/set-key-for-mode 'org-mode "k" 'org-metaup)
-  (evil-leader/set-key-for-mode 'org-mode "l" 'org-metaright)
-
-  (defun use-default-paragraph-delimiters ()
-    (setq paragraph-start (default-value 'paragraph-start)
-          paragraph-separate (default-value 'paragraph-separate)))
-
-  (add-hook 'org-mode-hook 'use-default-paragraph-delimiters)
-
   (setq org-todo-keywords
         '((sequence
            "TODO(t)" "REFILE(r)" "SOMEDAY(s)" "WAIT(w)"
@@ -637,11 +626,15 @@ you should place your code here."
                         ("self" . ?s)
                         ("work" . ?w)))
 
-  (add-hook 'org-capture-mode-hook 'evil-insert-state)
-  (add-hook 'org-insert-heading-hook 'evil-insert-state)
-
   (setq org-startup-indented t)
   (spacemacs|disable-company org-mode)
+
+  (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
+  ;; (defun use-default-paragraph-delimiters ()
+  ;;   (setq paragraph-start (default-value 'paragraph-start)
+  ;;         paragraph-separate (default-value 'paragraph-separate)))
+  ;; (add-hook 'org-mode-hook 'use-default-paragraph-delimiters)
 
   ;; Use variable fonts in org mode, outside of code and table etc.
   (set-face-font 'variable-pitch "CMU Serif:style=Roman")
@@ -650,7 +643,6 @@ you should place your code here."
     :hook (text-mode . mixed-pitch-mode))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 0)))
   (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.5)))
-  (add-hook 'org-mode-hook 'use-default-paragraph-delimiters)
 
   ;; Readtime
   (load-file
