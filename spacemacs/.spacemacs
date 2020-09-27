@@ -111,11 +111,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(org-plus-contrib)
+   dotspacemacs-additional-packages '(org-plus-contrib org-bullets)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(org-bullets)
+   dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -569,12 +569,6 @@ you should place your code here."
               (setq c-basic-offset 2)
               (setq fill-column 100)))
 
-  ;; C++
-
-  ;; (load-file
-  ;;  (concat elisp-path "google-style/google-c-style.el"))
-  ;; (add-hook 'c-mode-common-hook 'google-set-c-style)
-
   (setq c-default-style "k&r"
         c-basic-offset 4)
 
@@ -606,11 +600,6 @@ you should place your code here."
            entry
            (file ,org-default-notes-file)
            "* REFILE %?")
-
-          ;; ("q" "Client"
-          ;;  entry
-          ;;  (file ,(concat org-client-dir "/capture.org"))
-          ;;  "* REFILE %?")
           ))
 
   (spacemacs/set-leader-keys
