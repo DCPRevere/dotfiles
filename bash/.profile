@@ -25,4 +25,10 @@ export TERMINAL="/usr/bin/alacritty"
 # create i3 config file
 HN=$(hostname)
 DOT=$HOME/.dotfiles
-cat $DOT/i3/.i3/config.$HN > $DOT/i3/.i3/config
+CUSTOM=$DOT/i3/.i3/config.$HN
+DEF=$DOT/i3/.i3/config.default
+if [[ -f "$CUSTOM" ]]; then
+	cat $CUSTOM > $DOT/i3/.i3/config
+else
+	cat $DEFAULT > $DOT/i3/.i3/config
+fi
