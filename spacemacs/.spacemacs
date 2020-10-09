@@ -79,6 +79,7 @@ values."
                markdown-live-preview-engine 'vmd
                markdown-command "pandoc")
      mu4e
+     notmuch
      org
      pandoc
      pdf
@@ -111,11 +112,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(org-plus-contrib)
+   dotspacemacs-additional-packages '(org-plus-contrib mixed-pitch org-bullets)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(org-bullets)
+   dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -530,7 +531,7 @@ you should place your code here."
   (evil-leader/set-key-for-mode 'clojure-mode "ea" 'cider-load-all-project-ns)
 
   ;; Dired
-  (setq dired-listing-switches "-lGha --group-directories-first")
+  (setq dired-listing-switches "-lGhav --group-directories-first")
 
   ;; Drools
   (load-file
@@ -582,24 +583,28 @@ you should place your code here."
   (setq ispell-dictionary "british-ise-w_accents")
 
   ;; Org
-  (setq org-base-dir "~/org/")
+  (setq org-base-dir "~/org")
 
-  (setq org-private-dir (concat org-base-dir "private"))
-  (setq org-client-dir (concat org-base-dir "client"))
-  (setq org-blog-dir (concat org-base-dir "blog"))
-  (setq org-writing-dir (concat org-base-dir "writing"))
-  (setq org-archive-dir (concat org-base-dir "archive"))
+  (setq org-private-dir (concat org-base-dir "/private"))
+  (setq org-client-dir (concat org-base-dir "/client"))
+  (setq org-blog-dir (concat org-base-dir "/blog"))
+  (setq org-writing-dir (concat org-base-dir "/writing"))
+  (setq org-archive-dir (concat org-base-dir "/archive"))
 
   (setq org-agenda-files
         `(,org-base-dir
-          ,org-private-dir
-          ,org-client-dir
-          ,org-blog-dir
+          ;; ,org-private-dir
+          ;; ,org-client-dir
+          ;; ,org-blog-dir
           ,org-writing-dir))
+
   (setq org-refile-targets
         '((nil :maxlevel . 3)
           (org-agenda-files :maxlevel . 3)))
-  (setq org-default-notes-file (concat org-private-dir "/capture.org"))
+  (setq org-refile-use-outline-path 'file)
+  (setq org-outline-path-complete-in-steps nil)
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+  (setq org-default-notes-file (concat org-base-dir "/refile.org"))
   (setq org-archive-location (concat org-archive-dir "/%s_archive::"))
   (setq org-capture-templates
         `(("c" "Capture"
@@ -607,10 +612,10 @@ you should place your code here."
            (file ,org-default-notes-file)
            "* REFILE %?")
 
-          ;; ("q" "Client"
-          ;;  entry
-          ;;  (file ,(concat org-client-dir "/capture.org"))
-          ;;  "* REFILE %?")
+          ("t" "Task"
+           entry
+           (file ,(concat org-base-dir "/tasks.org"))
+           "* TODO %?")
           ))
 
   (spacemacs/set-leader-keys
@@ -662,6 +667,9 @@ you should place your code here."
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 0)))
   (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.5)))
   (add-hook 'org-mode-hook 'use-default-paragraph-delimiters)
+
+  ;; org latex fragment options
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 3.0))
 
   ;; Readtime
   (load-file
