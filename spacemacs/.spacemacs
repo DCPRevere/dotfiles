@@ -82,8 +82,7 @@ values."
                markdown-command "pandoc")
      mu4e
      notmuch
-     org
-     org-roam
+     (org :variables org-enable-roam-support t)
      pandoc
      pdf
      (python :variables
@@ -687,6 +686,7 @@ you should place your code here."
   (add-hook 'after-init-hook 'org-roam-mode)
   (require 'org-roam-protocol)
   (setq org-roam-graph-extra-config '(("ratio" . "0.2")))
+  ;; (setq org-roam-graph-edge-extra-config '())
 
   ;; Readtime
   (load-file (concat elisp-path "/read-time/read-time.el"))
