@@ -6,7 +6,7 @@
 
 (setq settings
       '(("phobos" . ((font-size . 28)))
-        ("europa" . ((font-size . 22)))
+        ("europa" . ((font-size . 26)))
         ("nixos" . ((font-size . 12)))
         ("deimos" . ((font-size . 12)))))
 
@@ -685,7 +685,7 @@ you should place your code here."
   (setq org-roam-directory "~/org/roam")
   (add-hook 'after-init-hook 'org-roam-mode)
   (require 'org-roam-protocol)
-  (setq org-roam-graph-extra-config '(("ratio" . "0.1")))
+  ;; (setq org-roam-graph-extra-config '(("ratio" . "0.1")))
   ;; (setq org-roam-graph-edge-extra-config '())
 
   ;; Readtime
