@@ -589,6 +589,7 @@ you should place your code here."
   (setq org-archive-dir (concat org-base-dir "/archive"))
 
   (setq org-ae-dir (concat org-writing-dir "/ae"))
+  (setq org-roam-dir (concat org-base-dir "/roam"))
 
   (setq org-agenda-files
         `(,org-base-dir
@@ -597,6 +598,7 @@ you should place your code here."
           ;; ,org-blog-dir
           ,org-writing-dir
           ,org-ae-dir
+          ;; ,org-roam-dir
           ))
 
   (setq org-agenda-start-day "-1d")
@@ -632,7 +634,7 @@ you should place your code here."
 
   (setq org-todo-keywords
         '((sequence
-           "TODO(t)" "REFILE(r)" "SOMEDAY(s)" "WAIT(w)"
+           "REFILE(r)" "TODO(t)" "SOMEDAY(s)" "WAIT(w)"
            "|"
            "DONE(d)" "CANCELLED(c)")))
 
@@ -682,10 +684,13 @@ you should place your code here."
   (load-file (concat elisp-path "/org-drill-table/org-drill-table.el"))
 
   ;; org-roam
-  (setq org-roam-directory "~/org/roam")
+  ;; (setq org-roam-directory "~/org/roam")
+  (setq org-roam-directory org-roam-dir)
+
   (add-hook 'after-init-hook 'org-roam-mode)
   (require 'org-roam-protocol)
-  (setq org-roam-graph-extra-config '(("ratio" . "0.2")))
+
+  ;; (setq org-roam-graph-extra-config '(("ratio" . "0.2")))
   ;; (setq org-roam-graph-edge-extra-config '())
 
   ;; Readtime

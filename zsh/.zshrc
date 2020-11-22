@@ -2,7 +2,7 @@
 export ZSH=/home/dare/.oh-my-zsh
 
 ZSH_THEME="agnoster"
-RPROMPT="[%D{%Y-%m-%d} %*]"
+# RPROMPT="[%D{%Y-%m-%d} %*]"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
