@@ -5,7 +5,7 @@
 (setq package-check-signature nil)
 
 (setq settings
-      '(("phobos" . ((font-size . 24)))
+      '(("phobos" . ((font-size . 28)))
         ("europa" . ((font-size . 22)))
         ("nixos" . ((font-size . 12)))
         ("deimos" . ((font-size . 12)))))
@@ -189,6 +189,7 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes
    '(
+     solarized-gruvbox-dark
      gruvbox-dark-soft
      doom-spacegrey
      tao-yin
