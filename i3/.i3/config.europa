@@ -198,6 +198,7 @@ gaps outer 0
 
 bar {
   mode hide
+  modifier Mod1
 
   position top
   tray_output eDP
