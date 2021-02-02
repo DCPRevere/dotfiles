@@ -198,7 +198,7 @@ gaps outer 0
 
 bar {
   mode hide
-  modifier Mod1
+  # modifier Mod1
 
   position top
   tray_output eDP
@@ -237,7 +237,7 @@ bindsym $mod+Shift+x exec gnome-terminal -e xkill
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk -t 4000:4000
 
-exec --no-startup-id unclutter
+exec --no-startup-id unclutter -root
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id nitrogen --set-zoom-fill --random ~/media/pictures/wallpapers/
