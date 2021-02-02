@@ -633,6 +633,10 @@ you should place your code here."
            entry
            (file ,org-default-notes-file)
            "* %a :website:\n%U %?\n%:initial")
+          ("r" "Roam"
+           entry
+           (file ,(concat org-roam-dir "/roam-refile.org"))
+           "* REFILE %?")
           ))
 
   (spacemacs/set-leader-keys
