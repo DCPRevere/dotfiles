@@ -683,6 +683,8 @@ you should place your code here."
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 0)))
   (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.5)))
 
+  (add-hook 'org-mode-hook (lambda () (set-input-method 'TeX)))
+
   ;; org latex fragment options
   (if (not (boundp 'org-format-latex-options))
       (setq org-format-latex-options nil))
