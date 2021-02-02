@@ -641,6 +641,8 @@ you should place your code here."
 
   (spacemacs/set-leader-keys
     "oc" 'org-capture
+    "oi" (lambda () (interactive) (set-input-method 'TeX))
+    "oI" (lambda () (interactive) (set-input-method 'pyim))
     "oo" (lambda () (interactive)
            (find-file org-default-notes-file)))
 
