@@ -5,7 +5,7 @@
 (setq package-check-signature nil)
 
 (setq settings
-      '(("phobos" . ((font-size . 28)))
+      '(("phobos" . ((font-size . 30)))
         ("europa" . ((font-size . 22)))
         ("nixos" . ((font-size . 12)))
         ("deimos" . ((font-size . 12)))))
@@ -42,7 +42,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(alda
+   '(nginx
+     alda
      ansible
      (auto-completion :variables
                       auto-completion-return-key-behavior        nil
@@ -50,6 +51,11 @@ values."
                       auto-completion-enable-snippets-in-popup   t
                       auto-completion-enable-sort-by-usage       t)
      (c-c++ :variables c-c++-enable-clang-support t)
+     (chinese :variables
+              chinese-enable-fcitx t
+              chinese-enable-youdao-dict t
+              )
+
      colors
      (clojure :variables
               clojure-enable-clj-refactor t
@@ -68,6 +74,7 @@ values."
      ;;              sunshine-location (getenv "LOCATION")
      ;;              sunshine-units 'metric
      ;;              sunshine-show-icons t)
+     epub
      git
      go
      gtags
