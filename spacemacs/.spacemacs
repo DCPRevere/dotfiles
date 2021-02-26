@@ -5,8 +5,8 @@
 (setq package-check-signature nil)
 
 (setq settings
-      '(("phobos" . ((font-size . 30)))
-        ("europa" . ((font-size . 22)))
+      '(("phobos" . ((font-size . 28)))
+        ("europa" . ((font-size . 28)))
         ("nixos" . ((font-size . 12)))
         ("deimos" . ((font-size . 12)))))
 
@@ -87,7 +87,6 @@ values."
      (markdown :variables
                markdown-live-preview-engine 'vmd
                markdown-command "pandoc")
-     mu4e
      notmuch
      (org :variables org-enable-roam-support t)
      pandoc
@@ -705,12 +704,14 @@ you should place your code here."
 
   (add-hook 'after-init-hook 'org-roam-mode)
   (require 'org-roam-protocol)
-
-  ;; (setq org-roam-graph-extra-config '(("ratio" . "0.2")))
+  ;; (setq org-roam-graph-extra-config '(("ratio" . "0.1")))
   ;; (setq org-roam-graph-edge-extra-config '())
 
   ;; Readtime
   (load-file (concat elisp-path "/read-time/read-time.el"))
+
+  ;; Roam-to-wiki
+  (load-file (concat elisp-path "/roam-to-wiki/roam-to-wiki.el"))
 
   ;; Powerline
   (setq powerline-default-separator 'slant)
