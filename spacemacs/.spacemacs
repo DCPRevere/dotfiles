@@ -758,9 +758,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((((class color) (min-colors 89)) (:foreground "#a89984" :background "#282828"))))
- '(org-level-1 ((t (:inherit org-default :height 1.3 :weight bold))))
- '(org-level-2 ((t (:inherit org-default :height 1.3 :weight regular))))
- '(org-level-3 ((t (:inherit org-default :height 1.3 :weight regular))))
- '(org-level-4 ((t (:inherit org-default :height 1.2 :weight regular))))
- '(org-level-5 ((t (:inherit org-default :height 1.1 :weight regular)))))
+ '(org-level-1 ((t (:inherit org-default :height 1.1 :weight bold))))
+ '(org-level-2 ((t (:inherit org-default :height 1.05 :weight regular))))
+ '(org-level-3 ((t (:inherit org-default :height 1.0 :weight regular))))
+ '(org-level-4 ((t (:inherit org-default :height 0.95 :weight regular))))
+ '(org-level-5 ((t (:inherit org-default :height 0.9 :weight regular)))))
 )
