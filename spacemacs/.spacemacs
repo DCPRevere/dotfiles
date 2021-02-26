@@ -80,7 +80,6 @@ values."
      (markdown :variables
                markdown-live-preview-engine 'vmd
                markdown-command "pandoc")
-     mu4e
      notmuch
      (org :variables org-enable-roam-support t)
      pandoc
