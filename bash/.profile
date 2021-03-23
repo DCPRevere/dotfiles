@@ -16,6 +16,10 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+if [ -f "$HOME/.bash.private" ]; then
+	  . "$HOME/.bash.private"
+fi
+
 export GOPATH=$HOME/src/go
 
 export PATH=$(zsh ~/.path.zsh)

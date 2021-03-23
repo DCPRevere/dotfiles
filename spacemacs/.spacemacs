@@ -68,13 +68,13 @@ values."
      eaf
      emacs-lisp
      ;; emms
-     ;; (geolocation :variables
-     ;;              geolocation-enable-location-service t
-     ;;              geolocation-enable-weather-forecast t
-     ;;              sunshine-appid "37cf26f7af26804ffa85ea10f479da71"
-     ;;              sunshine-location (getenv "LOCATION")
-     ;;              sunshine-units 'metric
-     ;;              sunshine-show-icons t)
+     (geolocation :variables
+                  geolocation-enable-location-service t
+                  geolocation-enable-weather-forecast t
+                  sunshine-appid "37cf26f7af26804ffa85ea10f479da71"
+                  sunshine-location (or (getenv "LOCATION") "London, GB")
+                  sunshine-units 'metric
+                  sunshine-show-icons t)
      epub
      git
      go
